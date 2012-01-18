@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>Owl Documentation</title>
+
+	<!-- CSS -->
+	<link href="assets/css/normalize.css" rel="stylesheet" type="text/css" media="screen" />
+	<link href="assets/css/style.css" rel="stylesheet" type="text/css" media="screen" />
+	<link href="assets/css/sunlight.liveapi.css" rel="stylesheet" type="text/css" media="screen" />
+
+	<!-- JS -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script src="assets/js/sunlight-min.js"></script>
+	<script src="assets/js/sunlight.php-min.js"></script>
+	<script src="assets/js/jquery.sunlight.js"></script>
+	<script src="assets/js/liveapi.js"></script>
+</head>
+<body>
+	<header>
+		<h1>Owl Documentation</h1>
+	</header>
+	<section id="search-bar"></section>
+
+	<section id="class-list">
+		<h3>Class List</h3>
+		<ul>
+			<li><a href="Owl_Asset_Css.html">Owl\Asset\Css</a></li>
+			<li><a href="Owl_Asset_JavaScript.html">Owl\Asset\JavaScript</a></li>
+			<li><a href="Owl_Asset_Meta.html">Owl\Asset\Meta</a></li>
+			<li><a href="Owl_Autoloader.html">Owl\Autoloader</a></li>
+			<li><a href="Owl_Layout.html">Owl\Layout</a></li>
+			<li><a href="Owl_View.html">Owl\View</a></li>
+		</ul>
+	</section>
+	<section id="api">
+		<h1>Owl\Asset\Meta</h1>
+
+<div id="lineage"></div>
+
+<p>A Metadata asset for an Owl view</p>
+
+
+<dl id="tags">
+	<dt>package</dt>
+	<dd>Owl</dd>
+	<dt>author</dt>
+	<dd>Dave Widmer &lt;dwidmer@bgsu.edu&gt;</dd>
+</dl>
+
+<div id="toc">
+	<div class="section">
+		<h3>Constants</h3>
+	</div>
+	
+	<div class="section">
+		<h3>Properties</h3>
+		<ul>
+			<li><a href="#property:content">$content</a></li>
+			<li><a href="#property:name">$name</a></li>
+		</ul>
+	</div>
+
+	<div class="section">
+		<h3>Methods</h3>
+		<ul>
+			<li><a href="#method:__construct">__construct()</a></li>
+			<li><a href="#method:__toString">__toString()</a></li>
+		</ul>
+	</div>
+</div>
+
+
+<div id="properties">
+	<h2>Properties</h2>
+
+	<section class="property">
+		<h4 id="property:content">public <small>string</small> <span class="name">$content</span></h4>
+		<div class="description">
+			<p>The content for the metadata</p>
+
+		</div>
+	</section>
+	<section class="property">
+		<h4 id="property:name">public <small>string</small> <span class="name">$name</span></h4>
+		<div class="description">
+			<p>The metadata name</p>
+
+		</div>
+	</section>
+</div>
+
+<div id="methods">
+	<h2>Methods</h2>
+
+	<section class="method">
+		<h4 id="method:__construct">public function <span class="name">__construct</span>( <small>string</small> <span class="param" title="The metadata name">$name</span> , <small>string</small> <span class="param" title="The content">$content</span> )</h4>
+
+		<div class="description">
+			<p>Creates a new Meta view asset.</p>
+
+		</div>
+
+		<h5>Parameters</h5>
+		<ul>
+			<li><code>string</code> <strong>$name</strong>  <small>Required</small> <small></small> - The metadata name</li>
+			<li><code>string</code> <strong>$content</strong>  <small>Required</small> <small></small> - The content</li>
+		</ul>
+
+
+
+		<h5>Source Code</h5>
+		<pre class="source sunlight-highlight-php">public function __construct($name, $content)
+{
+	$this-&gt;name = $name;
+	$this-&gt;content = $content;
+}</pre>
+	</section>
+	<section class="method">
+		<h4 id="method:__toString">public function <span class="name">__toString</span>()</h4>
+
+		<div class="description">
+			<p>Renders the asset to html</p>
+
+		</div>
+
+
+
+		<h5>Return Values</h5>
+		<ul>
+			<li><code>string</code> - The html for the &lt;meta&gt;</li>
+		</ul>
+
+		<h5>Source Code</h5>
+		<pre class="source sunlight-highlight-php">public function __toString()
+{
+	return '&lt;meta name=&quot;'.$this-&gt;name.'&quot; content=&quot;'.$this-&gt;content.'&quot;&gt;';
+}</pre>
+	</section>
+</div>
+
+	</section>
+
+	<footer>
+		<p>
+			Documentation generated on January 18th, 2012.
+			Powered by <a href="https://github.com/BGSU-LITS/LiveAPI">LiveAPI</a>.
+		</p>
+	</footer>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>Owl Documentation</title>
+
+	<!-- CSS -->
+	<link href="assets/css/normalize.css" rel="stylesheet" type="text/css" media="screen" />
+	<link href="assets/css/style.css" rel="stylesheet" type="text/css" media="screen" />
+	<link href="assets/css/sunlight.liveapi.css" rel="stylesheet" type="text/css" media="screen" />
+
+	<!-- JS -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script src="assets/js/sunlight-min.js"></script>
+	<script src="assets/js/sunlight.php-min.js"></script>
+	<script src="assets/js/jquery.sunlight.js"></script>
+	<script src="assets/js/liveapi.js"></script>
+</head>
+<body>
+	<header>
+		<h1>Owl Documentation</h1>
+	</header>
+	<section id="search-bar"></section>
+
+	<section id="class-list">
+		<h3>Class List</h3>
+		<ul>
+			<li><a href="Owl_Asset_Css.html">Owl\Asset\Css</a></li>
+			<li><a href="Owl_Asset_JavaScript.html">Owl\Asset\JavaScript</a></li>
+			<li><a href="Owl_Asset_Meta.html">Owl\Asset\Meta</a></li>
+			<li><a href="Owl_Autoloader.html">Owl\Autoloader</a></li>
+			<li><a href="Owl_Layout.html">Owl\Layout</a></li>
+			<li><a href="Owl_View.html">Owl\View</a></li>
+		</ul>
+	</section>
+	<section id="api">
+		<h1>Owl\Asset\Css</h1>
+
+<div id="lineage"></div>
+
+<p>A CSS asset for an Owl view</p>
+
+
+<dl id="tags">
+	<dt>package</dt>
+	<dd>Owl</dd>
+	<dt>author</dt>
+	<dd>Dave Widmer &lt;dwidmer@bgsu.edu&gt;</dd>
+</dl>
+
+<div id="toc">
+	<div class="section">
+		<h3>Constants</h3>
+	</div>
+	
+	<div class="section">
+		<h3>Properties</h3>
+		<ul>
+			<li><a href="#property:href">$href</a></li>
+			<li><a href="#property:media">$media</a></li>
+		</ul>
+	</div>
+
+	<div class="section">
+		<h3>Methods</h3>
+		<ul>
+			<li><a href="#method:__construct">__construct()</a></li>
+			<li><a href="#method:__toString">__toString()</a></li>
+		</ul>
+	</div>
+</div>
+
+
+<div id="properties">
+	<h2>Properties</h2>
+
+	<section class="property">
+		<h4 id="property:href">public <small>string</small> <span class="name">$href</span></h4>
+		<div class="description">
+			<p>The href for the link</p>
+
+		</div>
+	</section>
+	<section class="property">
+		<h4 id="property:media">public <small>string</small> <span class="name">$media</span></h4>
+		<div class="description">
+			<p>The media type</p>
+
+		</div>
+	</section>
+</div>
+
+<div id="methods">
+	<h2>Methods</h2>
+
+	<section class="method">
+		<h4 id="method:__construct">public function <span class="name">__construct</span>( <small>string</small> <span class="param" title="The link href">$href</span> [, <small>string</small> <span class="param" title="The media type">$media</span> <small>= 'screen'</small> ] )</h4>
+
+		<div class="description">
+			<p>Creates a new CSS view asset.</p>
+
+		</div>
+
+		<h5>Parameters</h5>
+		<ul>
+			<li><code>string</code> <strong>$href</strong>  <small>Required</small> <small></small> - The link href</li>
+			<li><code>string</code> <strong>$media</strong>  <small>'screen'</small> - The media type</li>
+		</ul>
+
+
+
+		<h5>Source Code</h5>
+		<pre class="source sunlight-highlight-php">public function __construct($href, $media = &quot;screen&quot;)
+{
+	$this-&gt;href = $href;
+	$this-&gt;media = $media;
+}</pre>
+	</section>
+	<section class="method">
+		<h4 id="method:__toString">public function <span class="name">__toString</span>()</h4>
+
+		<div class="description">
+			<p>Renders the asset to html</p>
+
+		</div>
+
+
+
+		<h5>Return Values</h5>
+		<ul>
+			<li><code>string</code> - The html for the &lt;link&gt;</li>
+		</ul>
+
+		<h5>Source Code</h5>
+		<pre class="source sunlight-highlight-php">public function __toString()
+{
+	return '&lt;link href=&quot;'.$this-&gt;href.'&quot; media=&quot;'.$this-&gt;media.'&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;';
+}</pre>
+	</section>
+</div>
+
+	</section>
+
+	<footer>
+		<p>
+			Documentation generated on January 18th, 2012.
+			Powered by <a href="https://github.com/BGSU-LITS/LiveAPI">LiveAPI</a>.
+		</p>
+	</footer>
+</body>
+</html>

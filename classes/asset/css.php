@@ -32,4 +32,14 @@ class Css
 		$this->media = $media;
 	}
 
+	/**
+	 * Renders the asset to html
+	 *
+	 * @return  string  The html for the <link>
+	 */
+	public function __toString()
+	{
+		return '<link href="'.$this->href.'" media="'.$this->media.'" rel="stylesheet" type="text/css">';
+	}
+
 }

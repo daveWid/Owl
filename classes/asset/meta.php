@@ -32,4 +32,14 @@ class Meta
 		$this->content = $content;
 	}
 
+	/**
+	 * Renders the asset to html
+	 *
+	 * @return  string  The html for the <meta>
+	 */
+	public function __toString()
+	{
+		return '<meta name="'.$this->name.'" content="'.$this->content.'">';
+	}
+
 }

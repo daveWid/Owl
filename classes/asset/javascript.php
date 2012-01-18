@@ -25,4 +25,14 @@ class JavaScript
 		$this->src = $src;
 	}
 
+	/**
+	 * Renders the asset to html
+	 *
+	 * @return  string  The html for the <script>
+	 */
+	public function __toString()
+	{
+		return '<script src="'.$this->src.'"></script>';
+	}
+
 }

@@ -7,7 +7,7 @@ Owl is a view library that uses Mustache as the renderer. Requires PHP 5.3+.
 To setup owl you will need to clone the repository. After that is done you will
 need to cd into the newly created directory and run the following command.
 
-```bash
+``` bash
 git submodule update --init --recursive
 ```
 
@@ -16,7 +16,7 @@ git submodule update --init --recursive
 Owl has autoloading built-in. To activate it you will need to include the bootstrap.php
 file
 
-```php
+``` php
 include "owl/bootstrap.php";
 ```
 
@@ -25,7 +25,7 @@ include "owl/bootstrap.php";
 Before you can start using the Owl library you will need to set the full server
 path to your template directory.
 
-```php
+``` php
 \Owl\View::$template_path = $full_path;
 ```
 
@@ -34,7 +34,7 @@ path to your template directory.
 Below is a full example on how to bootstrap and setup the owl class, given that
 the owl library is in `vendor/owl`.
 
-```php
+``` php
 // Load up the Owl bootstrap
 $base = dirname(__FILE__).DIRECTORY_SEPARATOR;
 include $base."vendor".DIRECTORY_SEPARATOR."owl".DIRECTORY_SEPARATOR."bootstrap.php";

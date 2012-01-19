@@ -16,7 +16,7 @@ abstract class View
 	public static $template_path = ".";
 
 	/**
-	 * @var Mustach The mustache instance used to render the views.
+	 * @var Mustache The mustache instance used to render the views.
 	 */
 	public static $renderer = null;
 
@@ -56,11 +56,31 @@ abstract class View
 	{
 		if ($this->template === null)
 		{
-			$file = View::$template_path.$this->file();
-			$this->template = file_get_contents($file);
+			$this->template = $this->load_template($this->file());
 		}
 
 		return $this->template;
+	}
+
+	/**
+	 * Gets the partials for the template. Use load_template
+	 *
+	 * @return array  Assoc array of name => templates
+	 */
+	public function partials()
+	{
+		return array();
+	}
+
+	/**
+	 * Loading of mustache templates.
+	 *
+	 * @param  string $file  The path of the template file (relative to the $templates_directory)
+	 * @return string        The full template
+	 */
+	protected function load_template($file)
+	{
+		return file_get_contents(static::$template_path.$file);
 	}
 
 	/**
@@ -72,20 +92,19 @@ abstract class View
 	{
 		if ($this->rendered === null)
 		{
-			$this->rendered = View::$renderer->render($this->template(), $this);
+			$partials = $this->partials();
+			if ( ! empty($partials))
+			{
+				foreach ($partials as $key => $file)
+				{
+					$partials[$key] = $this->load_template($file);
+				}
+			}
+
+			$this->rendered = static::$renderer->render($this->template(), $this, $partials);
 		}
 
 		return $this->rendered;
-	}
-
-	/**
-	 * Renders the view to html.
-	 *
-	 * @return string 
-	 */
-	public function __toString()
-	{
-		return $this->render();
 	}
 
 	/**

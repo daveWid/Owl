@@ -21,5 +21,12 @@ class View_Homepage extends \Owl\View
 			)
 		);
 	}
+
+	public function partials()
+	{
+		return array(
+			'greeting' => "partials/greeting.mustache",
+		);
+	}
 }
 	

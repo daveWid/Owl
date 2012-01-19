@@ -146,7 +146,7 @@ abstract class Layout extends \Owl\View
 	 */
 	public function __isset($name)
 	{
-		return isset($name);
+		return isset($this->{$name});
 	}
 
 }

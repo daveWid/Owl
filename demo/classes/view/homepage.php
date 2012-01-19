@@ -12,7 +12,7 @@ class View_Homepage extends \Owl\View
 		return isset($_GET['name']) ? $_GET['name'] : "";
 	}
 
-	public function add_to_template()
+	public function add_to_layout()
 	{
 		return array(
 			'title' => "Welcome",

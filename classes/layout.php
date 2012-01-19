@@ -55,7 +55,7 @@ abstract class Layout extends \Owl\View
 
 		$this->content = $view;
 
-		$add = $view->add_to_template();
+		$add = $view->add_to_layout();
 		if ( ! empty($add))
 		{
 			foreach ($add as $key => $data)

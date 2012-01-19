@@ -89,11 +89,11 @@ abstract class View
 	}
 
 	/**
-	 * Lets you add things to the template
+	 * Lets you add things to a layout.
 	 *
 	 * @return array Associative array of things to add.
 	 */
-	public function add_to_template()
+	public function add_to_layout()
 	{
 		return array();
 	}

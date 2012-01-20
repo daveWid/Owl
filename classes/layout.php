@@ -44,16 +44,17 @@ abstract class Layout extends \Owl\View
 	 * Getter/Setter for the content variable
 	 *
 	 * @param  Owl\View $view The view to set at the content
+	 * @param  boolean        Automatically render the content? (true will let you debug)
 	 * @return Owl\View       The content view file
 	 */
-	public function content(\Owl\View $view = null)
+	public function content(\Owl\View $view = null, $render = true)
 	{
 		if ($view === null)
 		{
 			return $this->content;
 		}
 
-		$this->content = $view;
+		$this->content = $render ? $view->render() : $view;
 
 		$add = $view->add_to_layout();
 		if ( ! empty($add))

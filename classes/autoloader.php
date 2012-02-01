@@ -48,7 +48,7 @@ class Autoloader
 		// Replace all namespace separators with directory separators and
 		// remove Owl\ from the beginning
 		$file = str_replace("\\", DIRECTORY_SEPARATOR, substr($class, 4));
-		$full_path = $this->path.$file.$this->extension;
+		$full_path = strtolower($this->path.$file.$this->extension);
 
 		if (is_file($full_path))
 		{

@@ -1,0 +1,19 @@
+<phpunit bootstrap="tests/bootstrap.php" colors="true" verbose="true">
+	<testsuites>
+		<testsuite name="Owl Test Suite">
+			<directory>tests/</directory>
+		</testsuite>
+	</testsuites>
+
+	<filter>
+		<blacklist>
+			<directory suffix=".php">tests/classes/</directory>
+			<file>classes/Mustache.php</file>
+			<file>classes/SplClassLoader.php</file>
+		</blacklist>
+	</filter>
+
+	<logging>
+		<log type="coverage-html" target="reports/coverage" charset="utf-8" />
+	</logging>
+</phpunit>

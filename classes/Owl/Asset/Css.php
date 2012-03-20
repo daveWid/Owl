@@ -26,7 +26,7 @@ class Css
 	 * @param string $href   The link href
 	 * @param string $media  The media type
 	 */
-	public function __construct($href, $media = "screen")
+	public function __construct($href, $media = "all")
 	{
 		$this->href = $href;
 		$this->media = $media;

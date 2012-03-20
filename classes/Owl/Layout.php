@@ -11,7 +11,7 @@ namespace Owl;
 abstract class Layout extends \Owl\View
 {
 	/**
-	 * @var \Owl\Owl The View class used as the content
+	 * @var mixed  The content to inject into the view.
 	 */
 	private $content = null;
 
@@ -41,29 +41,24 @@ abstract class Layout extends \Owl\View
 	protected $title = "";
 
 	/**
-	 * Getter/Setter for the content variable
+	 * The layout content that will replace {{{content}}} in the template.
 	 *
-	 * @param  Owl\View $view The view to set at the content
-	 * @param  boolean        Automatically render the content? (true will let you debug)
-	 * @return Owl\View       The content view file
+	 * @param  mixed $content  The content to inject into the template
+	 * @return mixed           The content [get] OR $this [set]
 	 */
-	public function content(\Owl\View $view = null, $render = true)
+	public function content($content = null)
 	{
-		if ($view === null)
+		if ($content === null)
 		{
 			return $this->content;
 		}
 
-		$this->content = $render ? $view->render() : $view;
-
-		$add = $view->add_to_layout();
-		if ( ! empty($add))
+		if ($content instanceof \Owl\View)
 		{
-			foreach ($add as $key => $data)
-			{
-				$this->set($key, $data);
-			}
+			$content = $content->render();
 		}
+
+		$this->content = $content;
 	}
 
 }

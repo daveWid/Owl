@@ -3,7 +3,7 @@
 namespace Owl;
 
 /**
- * The base view class.
+ * The base View class.
  *
  * @package   Owl
  * @author    Dave Widmer <dwidmer@bgsu.edu>
@@ -11,168 +11,112 @@ namespace Owl;
 abstract class View
 {
 	/**
-	 * @var string  The full path to the mustache template directory
+	 * @var mixed  The rendering engine used to compile the views.
 	 */
-	public static $template_path = ".";
+	private static $engine = null;
 
 	/**
-	 * @var Mustache The mustache instance used to render the views.
+	 * @var string  The path to the folder that holds the templates.
 	 */
-	public static $renderer = null;
+	private static $template_path = ".";
 
 	/**
-	 * @var string The mustache template
+	 * @var string  The extension for the template files
 	 */
-	private $template = null;
+	protected $extension = "mustache";
 
 	/**
-	 * @var string  The rendered template (useful for caching)
-	 */
-	private $rendered = null;
-
-	/**
-	 * Getter/Setter for the mustache template file
+	 * The rendering engine.
 	 *
-	 * @param  string $file  The mustache file
+	 * @param mixed $engine  The class to used as the rendering engine
+	 * @return               The rendering engine [get] OR $this [set]
+	 */
+	public function engine($engine = null)
+	{
+		if ($engine === null)
+		{
+			return self::$engine;
+		}
+
+		self::$engine = $engine;
+		return $this;
+	}
+
+	/**
+	 * The path where all of the templates are.
+	 *
+	 * @param  string $path  The full server path
+	 * @return mixed         The template path [get] OR $this [set]
+	 */
+	public function template_path($path = null)
+	{
+		if ($path === null)
+		{
+			return self::$template_path;
+		}
+
+		self::$template_path = rtrim($path, DIRECTORY_SEPARATOR).DIRECTORY_SEPARATOR;
+		return $this;
+	}
+
+	/**
+	 * Sets parameters in a batch way.
+	 *
+	 * @param array $params  An associative array of $name => $value pairs
+	 */
+	public function params(array $params)
+	{
+		foreach ($params as $name => $value)
+		{
+			$this->{$name} = $value;
+		}
+	}
+
+	/**
+	 * Gets the name of the template file (relative to the template path)
+	 *
 	 * @return string
 	 */
-	public function file($file = null)
+	public function file()
 	{
-		if ($file === null)
-		{
-			return $this->get_file();
-		}
-
-		$this->file = $file;
-		return $this->file;
+		// Normalize namespace separators
+		$file = str_replace(array("\\", "_"), DIRECTORY_SEPARATOR, get_class($this));
+		return $file.".".$this->extension;
 	}
 
 	/**
-	 * Gets the template.
-	 *
-	 * @return  string  The mustache template
-	 */
-	public function template()
-	{
-		if ($this->template === null)
-		{
-			$this->template = $this->load_template($this->file());
-		}
-
-		return $this->template;
-	}
-
-	/**
-	 * Gets the partials for the template. Use load_template
-	 *
-	 * @return array  Assoc array of name => templates
-	 */
-	public function partials()
-	{
-		return array();
-	}
-
-	/**
-	 * Loading of mustache templates.
+	 * Loads a template
 	 *
 	 * @param  string $file  The path of the template file (relative to the $templates_directory)
 	 * @return string        The full template
 	 */
-	protected function load_template($file)
+	public function load($file = null)
 	{
-		return file_get_contents(static::$template_path.$file);
+		if ($file === null)
+		{
+			$file = $this->file();
+		}
+
+		return file_get_contents($this->template_path().$file);
 	}
 
 	/**
 	 * Renders the view into html
 	 *
-	 * @return string  The rendered HTML
+	 * @param  array $partials  An associative array of $name => $path partials
+	 * @return string           The rendered HTML
 	 */
-	public function render()
+	public function render(array $partials = array())
 	{
-		if ($this->rendered === null)
+		if ( ! empty($partials))
 		{
-			$partials = $this->partials();
-			if ( ! empty($partials))
+			foreach ($partials as $key => $file)
 			{
-				foreach ($partials as $key => $file)
-				{
-					$partials[$key] = $this->load_template($file);
-				}
-			}
-
-			$this->rendered = static::$renderer->render($this->template(), $this, $partials);
-		}
-
-		return $this->rendered;
-	}
-
-	/**
-	 * Lets you add things to a layout.
-	 *
-	 * @return array Associative array of things to add.
-	 */
-	public function add_to_layout()
-	{
-		return array();
-	}
-
-	/**
-	 * Forcing the template file to be specified in all subclasses.
-	 *
-	 * @return string
-	 */
-	abstract protected function get_file();
-
-	/**
-	 * Gets the class property by name
-	 *
-	 * @param string $name  The name of the property to get
-	 */
-	public function get($name, $default = null)
-	{
-		return isset($this->{$name}) ? $this->{$name} : $default;
-	}
-
-	/**
-	 * Sets a class property, optionally overwriting the data instead of appending.
-	 *
-	 * @param  string  $name       The property name
-	 * @param  mixed   $value      The value to set
-	 * @param  boolean $overwrite  Overwrite the current value?
-	 * @return $this
-	 */
-	public function set($name, $value, $overwrite = false)
-	{
-		// Make sure we have a property if overwriting is turned on
-		$current = $this->get($name);
-		if ($overwrite AND $current === null)
-		{
-			$overwrite = false;
-		}
-
-		if ($overwrite)
-		{
-			$this->{$name} = $value;
-		}
-		else
-		{
-			if (is_array($value) OR is_object($value))
-			{
-				$this->{$name} = array_merge($current, $value);
-			}
-			else if(is_string($value))
-			{
-				$this->{$name} .= $value;
-			}
-			else
-			{
-				// If not a string, object or array, then just overwrite no matter what...
-				$this->{$name} = $value;
+				$partials[$key] = $this->load($file);
 			}
 		}
 
-		return $this;
+		return $this->engine()->render($this->load(), $this, $partials);
 	}
 
 	/**
@@ -183,7 +127,7 @@ abstract class View
 	 */
 	public function __get($name)
 	{
-		return $this->get($name, null);
+		return $this->{$name};
 	}
 
 	/**
@@ -194,7 +138,7 @@ abstract class View
 	 */
 	public function __set($name, $value)
 	{
-		$this->set($name, $value, true);
+		$this->{$name} = $value;
 	}
 
 	/**
@@ -215,7 +159,11 @@ abstract class View
 	 */
 	public function __toString()
 	{
-		return $this->render();
+		try {
+			return $this->render();
+		} catch (\Exception $e) {
+			echo $e;
+		}
 	}
 
 }

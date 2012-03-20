@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Owl" default="package" basedir=".">
+	<property name="version" value="0.2.0" />
+
+	<!-- Package -->
+	<target name="package">
+		<!-- Make the directory -->
+		<mkdir dir="package/${version}" />
+
+		<!-- Zip up the file -->
+		<zip destfile="${project.basedir}/package/${version}/Owl.zip">
+			<fileset dir="${project.basedir}">
+				<include name="classes/**"/>
+			</fileset>
+		</zip>
+	</target>
+
+</project>

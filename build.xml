@@ -10,7 +10,9 @@
 		<!-- Zip up the file -->
 		<zip destfile="${project.basedir}/package/${version}/Owl.zip">
 			<fileset dir="${project.basedir}">
-				<include name="classes/**"/>
+				<include name="classes/**" />
+				<include name="bootstrap.php" />
+				<include name="README.md" />
 			</fileset>
 		</zip>
 	</target>

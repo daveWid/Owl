@@ -1,1 +1,9 @@
 Welcome {{name}}
+
+{{#has_list}}
+<ul>
+{{#list}}
+	{{> list}}
+{{/list}}
+</ul>
+{{/has_list}}

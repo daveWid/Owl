@@ -41,6 +41,11 @@ abstract class Layout extends \Owl\View
 	public $title = "";
 
 	/**
+	 * @var boolean  Does this layout have an \Owl\View?
+	 */
+	private $has_view = false;
+
+	/**
 	 * The layout content that will replace {{{content}}} in the template.
 	 *
 	 * @param  mixed $content  The content to inject into the template
@@ -59,10 +64,12 @@ abstract class Layout extends \Owl\View
 		{
 			$content->added_to_layout($this);
 			$this->partials['content'] = $this->load($content->file());
+			$this->has_view = true;
 		}
 		else
 		{
 			$this->partials['content'] = $content;
+			$this->has_view = false;
 		}
 
 		return $this;
@@ -86,6 +93,61 @@ abstract class Layout extends \Owl\View
 		{
 			$this->{$name} = $values;
 		}
+	}
+
+	/**
+	 * Pass in the content partials to the rendering function.
+	 *
+	 * @param  array $partials  An array of partials
+	 * @return string           The rendered template
+	 */
+	public function render(array $partials = array())
+	{
+		if ($this->has_view)
+		{
+			$partials = array_merge($this->content->get_partials(), $partials);
+		}
+
+		return parent::render($partials);
+	}
+
+	/**
+	 * Allowing access to content properties (if a \Owl\View instance)
+	 *
+	 * @param  string $name  The name of the property to get
+	 * @return mixed
+	 */
+	public function __get($name)
+	{
+		if (method_exists($this->content, $name))
+		{
+			return $this->content->{$name}();
+		}
+		else
+		{
+			return $this->content->{$name};
+		}
+	}
+
+	/**
+	 * Checks to see if a variable is available in the content.
+	 *
+	 * @param  string $name  The name of the property to check
+	 * @return boolean
+	 */
+	public function __isset($name)
+	{
+		$set = false;
+
+		if ($this->has_view)
+		{
+			if (isset($this->content->{$name}) OR method_exists($this->content, $name))
+			{
+				$set = true;
+			}
+		}
+
+		return $set;
 	}
 
 }

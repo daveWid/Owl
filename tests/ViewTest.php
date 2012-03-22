@@ -87,7 +87,7 @@ class ViewTest extends PHPUnit_Framework_TestCase
 	public function testLoad()
 	{
 		$view = new BaseView;
-		$this->assertEquals("Welcome {{name}}", $view->load());
+		$this->assertEquals("Welcome Dave", substr($view->render(), 0, 12));
 	}
 
 	/**
@@ -96,9 +96,9 @@ class ViewTest extends PHPUnit_Framework_TestCase
 	public function testGetSet()
 	{
 		$view = new BaseView;
-		$view->name = "Dave";
+		$view->name = "Nicholas";
 
-		$this->assertEquals("Dave", $view->name);
+		$this->assertEquals("Nicholas", $view->name);
 	}
 
 	/**
@@ -108,7 +108,6 @@ class ViewTest extends PHPUnit_Framework_TestCase
 	{
 		$view = new BaseView;
 		$view->params(array(
-			'name' => "Dave",
 			'language' => "PHP"
 		));
 
@@ -124,10 +123,7 @@ class ViewTest extends PHPUnit_Framework_TestCase
 		$view = new BaseView;
 		$view->engine(new Mustache);
 
-		// Dynamic variable setting
-		$view->name = "Dave";
-
-		$this->assertEquals("Welcome Dave", $view->render());
+		$this->assertEquals("Welcome Dave", substr($view->render(), 0, 12));
 	}
 
 }

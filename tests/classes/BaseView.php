@@ -5,6 +5,18 @@ class BaseView extends \Owl\View
 	public $name = "Dave";
 	public $title = "Owl Testing!";
 
+	public $list = array(
+		"apple","orange","lemon","lime"
+	);
+
+	/**
+	 * Sets up some partials.
+	 */
+	public function __construct()
+	{
+		$this->partials['list'] = $this->load("partials/list.mustache");
+	}
+
 	/**
 	 * Inject in some variables.
 	 *
@@ -13,7 +25,14 @@ class BaseView extends \Owl\View
 	public function added_to_layout(\Owl\Layout $layout)
 	{
 		$layout->title .= $this->title;
-		$layout->name = $this->name;
+	}
+
+	/**
+	 * Does the content have a list?
+	 */
+	public function has_list()
+	{
+		return empty($this->list) === false;
 	}
 
 }

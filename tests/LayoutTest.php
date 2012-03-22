@@ -26,20 +26,28 @@ class LayoutTest extends PHPUnit_Framework_TestCase
 
 		parent::setUp();
 	}
-	
+
 	/**
 	 * Testing the setting of the content
 	 */
-	public function testAddingContent()
+	public function testContentPartial()
 	{
 		$content = new BaseView;
 		$this->layout->content($content);
 
-		// Partial
 		$this->assertArrayHasKey("content", $this->layout->get_partials());
+	}
 
-		// Fired added_to_layout correctly
-		$this->assertObjectHasAttribute("name", $this->layout);
+	/**
+	 * Make sure that the layout can access the variables of the content.
+	 */
+	public function testContentPassthru()
+	{
+		$content = new BaseView;
+		$this->layout->content($content);
+
+		$this->assertTrue(isset($this->layout->name));
+		$this->assertRegExp("/<title>Owl Testing!<\/title>/", $this->layout->render());
 	}
 
 	/**

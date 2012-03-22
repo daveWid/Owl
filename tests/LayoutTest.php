@@ -21,8 +21,8 @@ class LayoutTest extends PHPUnit_Framework_TestCase
 		$this->layout = new LayoutView;
 
 		$path = __DIR__.DIRECTORY_SEPARATOR."views".DIRECTORY_SEPARATOR;
-		$this->layout->template_path($path);
-		$this->layout->engine(new Mustache);
+		$this->layout->set_template_path($path);
+		$this->layout->set_engine(new Mustache);
 
 		parent::setUp();
 	}
@@ -33,7 +33,7 @@ class LayoutTest extends PHPUnit_Framework_TestCase
 	public function testContentPartial()
 	{
 		$content = new BaseView;
-		$this->layout->content($content);
+		$this->layout->set_content($content);
 
 		$this->assertArrayHasKey("content", $this->layout->get_partials());
 	}
@@ -44,7 +44,7 @@ class LayoutTest extends PHPUnit_Framework_TestCase
 	public function testContentPassthru()
 	{
 		$content = new BaseView;
-		$this->layout->content($content);
+		$this->layout->set_content($content);
 
 		$this->assertTrue(isset($this->layout->name));
 		$this->assertRegExp("/<title>Owl Testing!<\/title>/", $this->layout->render());

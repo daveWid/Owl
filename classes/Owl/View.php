@@ -31,18 +31,24 @@ abstract class View
 	protected $extension = "mustache";
 
 	/**
-	 * The rendering engine.
+	 * The template rendering engine.
 	 *
-	 * @param mixed $engine  The class to used as the rendering engine
-	 * @return               The rendering engine [get] OR $this [set]
+	 * @return mixed  The template rendering engine.
 	 */
-	public function engine($engine = null)
+	public function get_engine()
 	{
-		if ($engine === null)
-		{
-			return self::$engine;
-		}
+		return self::$engine;
+	}
 
+	/**
+	 * Sets the template rendering engine. The engine is static across all
+	 * View classes so you will only need to set it once.
+	 *
+	 * @param  mixed $engine  The rendering engine
+	 * @return \Owl\View      $this
+	 */
+	public function set_engine($engine)
+	{
 		self::$engine = $engine;
 		return $this;
 	}
@@ -50,16 +56,21 @@ abstract class View
 	/**
 	 * The path where all of the templates are.
 	 *
-	 * @param  string $path  The full server path
-	 * @return mixed         The template path [get] OR $this [set]
+	 * @return string  The template path
 	 */
-	public function template_path($path = null)
+	public function get_template_path()
 	{
-		if ($path === null)
-		{
-			return self::$template_path;
-		}
+		return self::$template_path;
+	}
 
+	/**
+	 * Sets the path to look for template files in.
+	 *
+	 * @param  string $path  The path to use for finding templates
+	 * @return \Owl\View     $this
+	 */
+	public function set_template_path($path)
+	{
 		self::$template_path = rtrim($path, DIRECTORY_SEPARATOR).DIRECTORY_SEPARATOR;
 		return $this;
 	}
@@ -68,13 +79,16 @@ abstract class View
 	 * Sets parameters in a batch way.
 	 *
 	 * @param array $params  An associative array of $name => $value pairs
+	 * @return \Owl\View     $this
 	 */
-	public function params(array $params)
+	public function set_params(array $params)
 	{
 		foreach ($params as $name => $value)
 		{
 			$this->{$name} = $value;
 		}
+
+		return $this;
 	}
 
 	/**
@@ -92,7 +106,7 @@ abstract class View
 	 *
 	 * @return string
 	 */
-	public function file()
+	public function get_file()
 	{
 		// Normalize namespace separators
 		$file = str_replace(array("\\", "_"), DIRECTORY_SEPARATOR, get_class($this));
@@ -109,10 +123,10 @@ abstract class View
 	{
 		if ($file === null)
 		{
-			$file = $this->file();
+			$file = $this->get_file();
 		}
 
-		return file_get_contents($this->template_path().$file);
+		return file_get_contents($this->get_template_path().$file);
 	}
 
 	/**
@@ -136,7 +150,7 @@ abstract class View
 	public function render(array $partials = array())
 	{
 		$partials = array_merge($this->partials, $partials);
-		return $this->engine()->render($this->load(), $this, $partials);
+		return $this->get_engine()->render($this->load(), $this, $partials);
 	}
 
 	/**

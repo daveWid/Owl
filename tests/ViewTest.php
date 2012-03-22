@@ -15,9 +15,9 @@ class ViewTest extends PHPUnit_Framework_TestCase
 	{
 		$mustache = new Mustache;
 		$view = new BaseView;
-		$view->engine($mustache);
+		$view->set_engine($mustache);
 
-		$this->assertInstanceOf("Mustache", $view->engine());
+		$this->assertInstanceOf("Mustache", $view->get_engine());
 	}
 
 	/**
@@ -27,11 +27,11 @@ class ViewTest extends PHPUnit_Framework_TestCase
 	{
 		$mustache = new Mustache;
 		$first = new BaseView;
-		$first->engine($mustache);
+		$first->set_engine($mustache);
 
 		$second = new BaseView;
 
-		$this->assertInstanceOf("Mustache", $second->engine());
+		$this->assertInstanceOf("Mustache", $second->get_engine());
 	}
 
 	/**
@@ -41,9 +41,9 @@ class ViewTest extends PHPUnit_Framework_TestCase
 	{
 		$path = __DIR__.DIRECTORY_SEPARATOR."views".DIRECTORY_SEPARATOR;
 		$view = new BaseView;
-		$view->template_path($path);
+		$view->set_template_path($path);
 
-		$this->assertEquals($path, $view->template_path());
+		$this->assertEquals($path, $view->get_template_path());
 	}
 
 	/**
@@ -53,9 +53,9 @@ class ViewTest extends PHPUnit_Framework_TestCase
 	{
 		$path = __DIR__.DIRECTORY_SEPARATOR."views";
 		$view = new BaseView;
-		$view->template_path($path);
+		$view->set_template_path($path);
 
-		$this->assertNotEquals($path, $view->template_path());
+		$this->assertNotEquals($path, $view->get_template_path());
 	}
 
 	/**
@@ -67,9 +67,9 @@ class ViewTest extends PHPUnit_Framework_TestCase
 		$first = new BaseView;
 		$second = new BaseView;
 
-		$first->template_path($path);
+		$first->set_template_path($path);
 
-		$this->assertEquals($first->template_path(), $second->template_path());
+		$this->assertEquals($first->get_template_path(), $second->get_template_path());
 	}
 
 	/**
@@ -78,7 +78,7 @@ class ViewTest extends PHPUnit_Framework_TestCase
 	public function testFileName()
 	{
 		$view = new BaseView;
-		$this->assertEquals("BaseView.mustache", $view->file());
+		$this->assertEquals("BaseView.mustache", $view->get_file());
 	}
 
 	/**
@@ -107,7 +107,7 @@ class ViewTest extends PHPUnit_Framework_TestCase
 	public function testParams()
 	{
 		$view = new BaseView;
-		$view->params(array(
+		$view->set_params(array(
 			'language' => "PHP"
 		));
 
@@ -121,7 +121,7 @@ class ViewTest extends PHPUnit_Framework_TestCase
 	public function testRender()
 	{
 		$view = new BaseView;
-		$view->engine(new Mustache);
+		$view->set_engine(new Mustache);
 
 		$this->assertEquals("Welcome Dave", substr($view->render(), 0, 12));
 	}

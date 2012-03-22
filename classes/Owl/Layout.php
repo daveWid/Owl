@@ -46,24 +46,31 @@ abstract class Layout extends \Owl\View
 	private $has_view = false;
 
 	/**
-	 * The layout content that will replace {{{content}}} in the template.
+	 * The content that will replace {{> content}} in the layout template.
 	 *
-	 * @param  mixed $content  The content to inject into the template
-	 * @return mixed           The content [get] OR $this [set]
+	 * @return mixed
 	 */
-	public function content($content = null)
+	public function get_content()
 	{
-		if ($content === null)
-		{
-			return $this->content;
-		}
+		return $this->content;
+	}
 
+	/**
+	 * Sets the content that will replace {{> content}} in the template. This
+	 * can be anything that can be echo'ed out, but if it is an \Owl\View class
+	 * then the added_to_layout function will be called.
+	 *
+	 * @param  mixed $content  The content.
+	 * @return \Owl\Layout     $this
+	 */
+	public function set_content($content)
+	{
 		$this->content = $content;
 
 		if ($content instanceof \Owl\View)
 		{
 			$content->added_to_layout($this);
-			$this->partials['content'] = $this->load($content->file());
+			$this->partials['content'] = $this->load($content->get_file());
 			$this->has_view = true;
 		}
 		else

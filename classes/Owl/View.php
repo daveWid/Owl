@@ -21,6 +21,11 @@ abstract class View
 	private static $template_path = ".";
 
 	/**
+	 * @var array  A list of partials in $name => $template_file_path format.
+	 */
+	protected $partials = array();
+
+	/**
 	 * @var string  The extension for the template files
 	 */
 	protected $extension = "mustache";
@@ -73,6 +78,16 @@ abstract class View
 	}
 
 	/**
+	 * The partials for this view.
+	 *
+	 * @return array
+	 */
+	public function get_partials()
+	{
+		return $this->partials;
+	}
+
+	/**
 	 * Gets the name of the template file (relative to the template path)
 	 *
 	 * @return string
@@ -101,33 +116,27 @@ abstract class View
 	}
 
 	/**
-	 * Renders the view into html
+	 * Runs when the view is added to a layout. This will let you assign variables
+	 * into the layout.
 	 *
-	 * @param  array $partials  An associative array of $name => $path partials
+	 * @param \Owl\Layout $layout  The layout that this view was added to
+	 */
+	public function added_to_layout(\Owl\Layout $layout)
+	{
+		// This does nothing by default...
+	}
+
+	/**
+	 * Renders the view into html. All passed in partials should be the full
+	 * template.
+	 *
+	 * @param  array $partials  An associative array of $name => $template
 	 * @return string           The rendered HTML
 	 */
 	public function render(array $partials = array())
 	{
-		if ( ! empty($partials))
-		{
-			foreach ($partials as $key => $file)
-			{
-				$partials[$key] = $this->load($file);
-			}
-		}
-
+		$partials = array_merge($this->partials, $partials);
 		return $this->engine()->render($this->load(), $this, $partials);
-	}
-
-	/**
-	 * Magic "get" method.
-	 *
-	 * @param  string $name The name of the propery to get
-	 * @return mixed        The value
-	 */
-	public function __get($name)
-	{
-		return $this->{$name};
 	}
 
 	/**
@@ -139,17 +148,6 @@ abstract class View
 	public function __set($name, $value)
 	{
 		$this->{$name} = $value;
-	}
-
-	/**
-	 * Checks to see if the propery is set.
-	 *
-	 * @param  string $name The name of the property to check
-	 * @return boolean
-	 */
-	public function __isset($name)
-	{
-		return isset($this->{$name});
 	}
 
 	/**

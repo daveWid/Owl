@@ -18,27 +18,27 @@ abstract class Layout extends \Owl\View
 	/**
 	 * @var string The character set for the page
 	 */
-	protected $charset = "utf-8";
+	public $charset = "utf-8";
 
 	/**
 	 * @var array  An array of css files in a href => , media => format
 	 */
-	protected $css = array();
+	public $css = array();
 
 	/**
 	 * @var array  An array of js files in a src => format
 	 */
-	protected $js = array();
+	public $js = array();
 
 	/**
 	 * @var array An array of metadata in a name => , content => format
 	 */
-	protected $meta = array();
+	public $meta = array();
 
 	/**
 	 * @var string The page title.
 	 */
-	protected $title = "";
+	public $title = "";
 
 	/**
 	 * The layout content that will replace {{{content}}} in the template.
@@ -53,12 +53,39 @@ abstract class Layout extends \Owl\View
 			return $this->content;
 		}
 
+		$this->content = $content;
+
 		if ($content instanceof \Owl\View)
 		{
-			$content = $content->render();
+			$content->added_to_layout($this);
+			$this->partials['content'] = $this->load($content->file());
+		}
+		else
+		{
+			$this->partials['content'] = $content;
 		}
 
-		$this->content = $content;
+		return $this;
+	}
+
+	/**
+	 * Merges an array property of a layout in with the values supplied. This will
+	 * be useful in the added_to_layout event hook.
+	 *
+	 * @param  string $name   The property name
+	 * @param  array  $values An array of values to merge
+	 * @return \Owl\Layout    $this
+	 */
+	public function merge($name, array $values)
+	{
+		if (isset($this->{$name}))
+		{
+			$this->{$name} = array_merge($this->{$name}, $values);
+		}
+		else
+		{
+			$this->{$name} = $values;
+		}
 	}
 
 }

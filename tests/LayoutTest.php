@@ -28,6 +28,23 @@ class LayoutTest extends PHPUnit_Framework_TestCase
 	}
 
 	/**
+	 * Test the fetching of content.
+	 */
+	public function testContent()
+	{
+		$content = new BaseView;
+		$html = "<h1>Hello World</h1>";
+
+		// View content...
+		$this->layout->set_content($content);
+		$this->assertInstanceOf("Owl\\View", $this->layout->get_content());
+
+		// Raw html
+		$this->layout->set_content($html);
+		$this->assertInternalType("string", $this->layout->get_content());
+	}
+
+	/**
 	 * Testing the setting of the content
 	 */
 	public function testContentPartial()

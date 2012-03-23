@@ -92,7 +92,7 @@ abstract class Layout extends \Owl\View
 	 */
 	public function merge($name, array $values)
 	{
-		if (isset($this->{$name}))
+		if (empty($this->{$name}) === false)
 		{
 			$this->{$name} = array_merge($this->{$name}, $values);
 		}

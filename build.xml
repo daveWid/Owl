@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="Owl" default="package" basedir=".">
-	<property name="version" value="1.0.0" />
+	<property name="version" value="1.0.1" />
 
 	<!-- Package -->
 	<target name="package">

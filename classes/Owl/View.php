@@ -26,11 +26,6 @@ abstract class View
 	protected $partials = array();
 
 	/**
-	 * @var string  The extension for the template files
-	 */
-	protected $extension = "mustache";
-
-	/**
 	 * The template rendering engine.
 	 *
 	 * @return mixed  The template rendering engine.
@@ -110,7 +105,7 @@ abstract class View
 	{
 		// Normalize namespace separators
 		$file = str_replace(array("\\", "_"), DIRECTORY_SEPARATOR, get_class($this));
-		return $file.".".$this->extension;
+		return $file.".mustache";
 	}
 
 	/**

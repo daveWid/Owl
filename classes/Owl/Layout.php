@@ -83,26 +83,6 @@ abstract class Layout extends \Owl\View
 	}
 
 	/**
-	 * Merges an array property of a layout in with the values supplied. This will
-	 * be useful in the added_to_layout event hook.
-	 *
-	 * @param  string $name   The property name
-	 * @param  array  $values An array of values to merge
-	 * @return \Owl\Layout    $this
-	 */
-	public function merge($name, array $values)
-	{
-		if (empty($this->{$name}) === false)
-		{
-			$this->{$name} = array_merge($this->{$name}, $values);
-		}
-		else
-		{
-			$this->{$name} = $values;
-		}
-	}
-
-	/**
 	 * Pass in the content partials to the rendering function.
 	 *
 	 * @param  array $partials  An array of partials

@@ -1,7 +1,7 @@
 # Owl
 
 Owl is a view library that uses [Mustache](https://github.com/bobthecow/mustache.php)
-as the renderer. Requires PHP 5.3+.
+as the rendering engine. Requires PHP 5.3+.
 
 ## Downloading
 
@@ -14,8 +14,8 @@ application.
 ## Autoloading
 
 Owl fully supports [PSR-0](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md)
-autoloading, which you can either setup on your own use the included bootstrap.php
-file in your project which will setup autoloading of the Owl library for you.
+autoloading. If you don't already have PSR-0 support in your application, include
+the bootstrap.php file which will setup autoloading of the Owl library for you.
 
 ## Setup
 

@@ -25,6 +25,7 @@ class BaseView extends \Owl\View
 	public function added_to_layout(\Owl\Layout $layout)
 	{
 		$layout->title .= $this->title;
+		$layout->css[] = new \Owl\Asset\Css("css/slideshow.css");
 	}
 
 	/**

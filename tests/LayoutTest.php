@@ -68,25 +68,14 @@ class LayoutTest extends PHPUnit_Framework_TestCase
 	}
 
 	/**
-	 * Making sure that the merge function is working correctly.
+	 * Making sure that the added to layout function is working correctly.
 	 */
-	public function testMerge()
+	public function testAddedToLayout()
 	{
-		$css = array(
-			new \Owl\Asset\Css("css/layout.css"),
-			new \Owl\Asset\Css("css/style.css"),
-		);
+		$content = new BaseView;
 
-		// Merge just adds at beginning
-		$this->layout->merge('css', $css);
-		$this->assertCount(2, $this->layout->css);
-
-		// Merge appends with existing values
-		$this->layout->css = $this->layout->css = array(
-			new \Owl\Asset\Css("css/base.css")
-		);
-		$this->layout->merge("css", $css);
-		$this->assertCount(3, $this->layout->css);
+		$this->layout->set_content($content);
+		$this->assertCount(1, $this->layout->css); // Added from the BaseView
 	}
 
 }

@@ -11,26 +11,16 @@ namespace Owl;
 abstract class View
 {
 	/**
-	 * @var mixed  The rendering engine used to compile the views.
+	 * @var \Owl\Engine  The rendering engine used to compile the views.
 	 */
 	private static $engine = null;
 
 	/**
-	 * @var string  The path to the folder that holds the templates.
-	 */
-	private static $template_path = ".";
-
-	/**
-	 * @var array  A list of partials in $name => $template_file_path format.
-	 */
-	protected $partials = array();
-
-	/**
 	 * The template rendering engine.
 	 *
-	 * @return mixed  The template rendering engine.
+	 * @return \Owl\Engine  The template rendering engine.
 	 */
-	public function get_engine()
+	public static function get_engine()
 	{
 		return self::$engine;
 	}
@@ -39,36 +29,54 @@ abstract class View
 	 * Sets the template rendering engine. The engine is static across all
 	 * View classes so you will only need to set it once.
 	 *
-	 * @param  mixed $engine  The rendering engine
-	 * @return \Owl\View      $this
+	 * @param \Owl\Engine $engine  The rendering engine
 	 */
-	public function set_engine($engine)
+	public static function set_engine(\Owl\Engine $engine)
 	{
 		self::$engine = $engine;
-		return $this;
 	}
 
 	/**
-	 * The path where all of the templates are.
-	 *
-	 * @return string  The template path
+	 * @var \Owl\Finder  The class used to find template files
 	 */
-	public function get_template_path()
+	private static $finder = null;
+
+	/**
+	 * Gets the finder.
+	 *
+	 * @return \Owl\Finder
+	 */
+	public static function get_finder()
 	{
-		return self::$template_path;
+		return self::$finder;
 	}
 
 	/**
-	 * Sets the path to look for template files in.
+	 * Set the file finder.
 	 *
-	 * @param  string $path  The path to use for finding templates
-	 * @return \Owl\View     $this
+	 * @param \Owl\Finder $finder  The file finder class
 	 */
-	public function set_template_path($path)
+	public static function set_finder(\Owl\Finder $finder)
 	{
-		self::$template_path = rtrim($path, DIRECTORY_SEPARATOR).DIRECTORY_SEPARATOR;
-		return $this;
+		self::$finder = $finder;
 	}
+
+	/**
+	 * Creates a new View instance, if the rendering engine isn't set, it will
+	 * default to the Mustache engine.
+	 */
+	public function __construct()
+	{
+		if (self::get_engine() === null)
+		{
+			self::set_engine(new \Owl\Engine\Mustache);
+		}
+	}
+
+	/**
+	 * @var array  A list of partials in $name => $template_file_path format.
+	 */
+	protected $partials = array();
 
 	/**
 	 * Sets parameters in a batch way.
@@ -121,7 +129,7 @@ abstract class View
 			$file = $this->get_file();
 		}
 
-		return file_get_contents($this->get_template_path().$file);
+		return file_get_contents(self::get_finder()->find($file));
 	}
 
 	/**
@@ -145,7 +153,7 @@ abstract class View
 	public function render(array $partials = array())
 	{
 		$partials = array_merge($this->partials, $partials);
-		return $this->get_engine()->render($this->load(), $this, $partials);
+		return self::get_engine()->render($this->load(), $this, $partials);
 	}
 
 	/**

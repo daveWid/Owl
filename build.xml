@@ -6,7 +6,7 @@
 	<target name="package">
 		<property name="file" value="package/Owl-${version}.zip" />
 
-		<mkdir dir="package/${version}" />
+		<mkdir dir="package" />
 		<delete file="${file}" />
 
 		<zip destfile="${file}">

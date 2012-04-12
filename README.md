@@ -1,6 +1,6 @@
 # Owl
 
-Owl is a view library that can interface with different tmeplate rendering engines.
+Owl is a view library that can interface with different template rendering engines.
 Owl uses [Mustache](https://github.com/bobthecow/mustache.php) as the default
 rendering engine. Requires PHP 5.3+.
 
@@ -41,7 +41,7 @@ $engine = new \Owl\Engine\Mustache;
 ### File Finder
 
 We need a way to find the template files to load and then eventually render. You
-will need to specify a class that implement `\Owl\Finder` to do that. Provided
+will need to specify a class that implements `\Owl\Finder` to do that. Provided
 are a direct file system class and if you are using the Kohana framework, a finder
 that uses the cascading file system (Badass!).
 

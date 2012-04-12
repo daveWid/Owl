@@ -74,7 +74,7 @@ abstract class View
 	}
 
 	/**
-	 * @var array  A list of partials in $name => $template_file_path format.
+	 * @var array  A list of partials in $name => template
 	 */
 	protected $partials = array();
 

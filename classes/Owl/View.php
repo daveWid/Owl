@@ -94,7 +94,7 @@ abstract class View
 
 		foreach ($name as $key => $value)
 		{
-			$this->{$name} = $value;
+			$this->{$key} = $value;
 		}
 
 		return $this;

@@ -43,7 +43,7 @@ class ViewTest extends PHPUnit_Framework_TestCase
 	public function testParams()
 	{
 		$view = new BaseView;
-		$view->set_params(array(
+		$view->set(array(
 			'language' => "PHP"
 		));
 

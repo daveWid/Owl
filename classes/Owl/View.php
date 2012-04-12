@@ -81,12 +81,18 @@ abstract class View
 	/**
 	 * Sets parameters in a batch way.
 	 *
-	 * @param array $params  An associative array of $name => $value pairs
+	 * @param  mixed $name   The property name OR an array of params
+	 * @param  mixed $value  The value of the property if not an array
 	 * @return \Owl\View     $this
 	 */
-	public function set_params(array $params)
+	public function set($name, $value = null)
 	{
-		foreach ($params as $name => $value)
+		if (is_array($name) === false)
+		{
+			$name = array($name => $value);
+		}
+
+		foreach ($name as $key => $value)
 		{
 			$this->{$name} = $value;
 		}

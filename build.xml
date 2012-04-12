@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="Owl" default="package" basedir=".">
-	<property name="version" value="1.0.1" />
+	<property name="version" value="1.1.0" />
 
 	<!-- Package -->
 	<target name="package">
-		<!-- Make the directory -->
-		<mkdir dir="package/${version}" />
+		<property name="file" value="package/Owl-${version}.zip" />
 
-		<!-- Zip up the file -->
-		<zip destfile="${project.basedir}/package/${version}/Owl.zip">
+		<mkdir dir="package/${version}" />
+		<delete file="${file}" />
+
+		<zip destfile="${file}">
 			<fileset dir="${project.basedir}">
 				<include name="classes/**" />
-				<include name="bootstrap.php" />
 				<include name="README.md" />
 				<include name="LICENSE.md" />
 			</fileset>
 		</zip>
 	</target>
-
 </project>

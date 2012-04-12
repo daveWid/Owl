@@ -14,6 +14,7 @@ class BaseView extends \Owl\View
 	 */
 	public function __construct()
 	{
+		parent::__construct();
 		$this->partials['list'] = $this->load("partials/list.mustache");
 	}
 

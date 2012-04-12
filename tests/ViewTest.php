@@ -9,70 +9,6 @@
 class ViewTest extends PHPUnit_Framework_TestCase
 {
 	/**
-	 * Make sure we can get and set the engine 
-	 */
-	public function testEngine()
-	{
-		$mustache = new Mustache;
-		$view = new BaseView;
-		$view->set_engine($mustache);
-
-		$this->assertInstanceOf("Mustache", $view->get_engine());
-	}
-
-	/**
-	 * Make sure we can share the engine across multiple instances. 
-	 */
-	public function testSharedEngine()
-	{
-		$mustache = new Mustache;
-		$first = new BaseView;
-		$first->set_engine($mustache);
-
-		$second = new BaseView;
-
-		$this->assertInstanceOf("Mustache", $second->get_engine());
-	}
-
-	/**
-	 * Testing the template path getter/setter 
-	 */
-	public function testTemplatePath()
-	{
-		$path = __DIR__.DIRECTORY_SEPARATOR."views".DIRECTORY_SEPARATOR;
-		$view = new BaseView;
-		$view->set_template_path($path);
-
-		$this->assertEquals($path, $view->get_template_path());
-	}
-
-	/**
-	 * Make sure that template_path adds a directory separator
-	 */
-	public function testTemplatePathAddsSeparator()
-	{
-		$path = __DIR__.DIRECTORY_SEPARATOR."views";
-		$view = new BaseView;
-		$view->set_template_path($path);
-
-		$this->assertNotEquals($path, $view->get_template_path());
-	}
-
-	/**
-	 * Sharing of the template path
-	 */
-	public function testTemplatePathShared()
-	{
-		$path = __DIR__.DIRECTORY_SEPARATOR."views";
-		$first = new BaseView;
-		$second = new BaseView;
-
-		$first->set_template_path($path);
-
-		$this->assertEquals($first->get_template_path(), $second->get_template_path());
-	}
-
-	/**
 	 * Get the name of the view based on the filename 
 	 */
 	public function testFileName()
@@ -121,7 +57,6 @@ class ViewTest extends PHPUnit_Framework_TestCase
 	public function testRender()
 	{
 		$view = new BaseView;
-		$view->set_engine(new Mustache);
 
 		$this->assertEquals("Welcome Dave", substr($view->render(), 0, 12));
 	}

@@ -21,8 +21,9 @@ class LayoutTest extends PHPUnit_Framework_TestCase
 		$this->layout = new LayoutView;
 
 		$path = __DIR__.DIRECTORY_SEPARATOR."views".DIRECTORY_SEPARATOR;
-		$this->layout->set_template_path($path);
-		$this->layout->set_engine(new Mustache);
+
+		$finder = new \Owl\Finder\FileSystem($path);
+		\Owl\View::set_finder($finder);
 
 		parent::setUp();
 	}

@@ -1,11 +1,12 @@
 # Owl
 
-Owl is a view library that uses [Mustache](https://github.com/bobthecow/mustache.php)
-as the rendering engine. Requires PHP 5.3+.
+Owl is a view library that can interface with different tmeplate rendering engines.
+Owl uses [Mustache](https://github.com/bobthecow/mustache.php) as the default
+rendering engine. Requires PHP 5.3+.
 
 ## Downloading
 
-Visit the [downloads](https://github.com/BGSU-LITS/Owl/downloads) page and click
+Visit the [downloads](https://github.com/daveWid/Owl/downloads) page and click
 on the latest version to grab the files.
 
 Once you have the files downloaded and unzipped, move the classes over to your
@@ -14,37 +15,48 @@ application.
 ## Autoloading
 
 Owl fully supports [PSR-0](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md)
-autoloading. If you don't already have PSR-0 support in your application, include
-the bootstrap.php file which will setup autoloading of the Owl library for you.
+autoloading.
 
 ## Setup
 
-The Owl library needs two options set before it will work correctly. The first
-is the rendering engine.
+The Owl library strives for flexibility in rendering engines and finding files.
+Unfortunately this flexibility adds a few more steps in the setup process.
+Below are the two things you can inject, the rendering engine and the file finder.
+
+### Engine
+
+By default, a Mustache rendering engine is setup. If you would like to use a
+different engine you can set it with `set_engine`. Your engine will have to
+implement the `\Owl\Engine` interface. The rendering engine is shared between
+all view and layout classes, so you only need to set it once per request.
 
 ``` php
 <?php
 
-$content = new \Owl\View;
-$content->set_engine(new Mustache);
+// Please don't do this as the Mustache engine is default, this is just an example
+$engine = new \Owl\Engine\Mustache;
+\Owl\View::set_engine($engine);
 ```
 
-The rendering engine is shared between all view and layout classes, so you only
-need to set it once per request.
+### File Finder
 
-The same holds true with the template path, which points to the folder where you
-are holding your mustache template files. You can set it like so.
+We need a way to find the template files to load and then eventually render. You
+will need to specify a class that implement `\Owl\Finder` to do that. Provided
+are a direct file system class and if you are using the Kohana framework, a finder
+that uses the cascading file system (Badass!).
 
 ``` php
 <?php
 
-$path = __DIR__.DIRECTORY_SEPARATOR."template"; // <-- replace with a real path of course!
-$content->set_template_path($path);
+$path = __DIR__.DIRECTORY_SEPARATOR."views";
+$finder = new \Owl\Finder\FileSystem($path);
+\Owl\View::set_finder($finder);
 ```
 
 ## Usage
 
-You are now ready to start creating your view classes and building your webpages!
+Now that you are setup, lets start creating your view classes and building your
+application!
 
 The first thing you will want to do is create a new class that extends \Owl\View.
 
@@ -65,7 +77,7 @@ directory separators. If you want to specify the full path to your files manuall
 override the `get_file` function.
 
 In our example above, we will want to create our template at
-`$template_path/Homepage.mustache`.
+`__DIR__/views/Homepage.mustache`.
 
 ```
 Hello {{name}}
@@ -76,9 +88,8 @@ Then all we will need to do is render our view class (echo works also).
 ``` php
 <?php
 
+// Assuming file finder is already set from above.
 $content = new Homepage;
-$content->set_engine(new Mustache);
-$content->set_template_path($path);
 
 $content->render(); // Output: Hello Dave
 // echo $content; <-- this works too
@@ -98,7 +109,7 @@ class Layout_Browser extends \Owl\Layout
 }
 ```
 
-Our template file at `$template_path/Layout/Browser.mustache` would then hold our
+Our template file at `__DIR__/views/Layout/Browser.mustache` would then hold our
 html page.
 
 ``` html
@@ -182,7 +193,9 @@ have any questions/bugs/concerns please use the bug tracker here on github.
 
 ## Hacking
 
-Feel free to hack away on the develop branch and send pull requests!
+If you use a different framework than those currently supported fork this repo
+and add those files. The only thing I as is to please use and send pull requests
+on the develop branch.
 
 ## License
 
@@ -190,4 +203,4 @@ This code is licensed under the [MIT](http://www.opensource.org/licenses/mit-lic
 
 ---
 
-Developed by [BGSU Library ITS](http://ul2.bgsu.edu/labs).
+Developed by [Dave Widmer](http://www.davewidmer.net).

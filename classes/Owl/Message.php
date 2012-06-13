@@ -21,7 +21,7 @@ class Message
 	 *
 	 * @param ISession $session 
 	 */
-	public static function set_session(ISession $session)
+	public static function setSession(ISession $session)
 	{
 		self::$session = $session;
 	}
@@ -29,11 +29,11 @@ class Message
 	/**
 	 * Gets the current message.
 	 *
-	 * @return mixed  The currently stored message or FALSE
+	 * @return mixed  The currently stored message or false
 	 */
 	public static function get()
 	{
-		return self::$session->get_once('owl_flash', FALSE);
+		return self::$session->getOnce('owl_flash', false);
 	}
 
 	/**

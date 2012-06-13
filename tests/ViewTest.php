@@ -9,12 +9,24 @@
 class ViewTest extends PHPUnit_Framework_TestCase
 {
 	/**
+	 * @var \Owl\View  The view class.
+	 */
+	private $view;
+
+	/**
+	 * Create a base view
+	 */
+	public function setUp()
+	{
+		$this->view = new BaseView;
+	}
+
+	/**
 	 * Get the name of the view based on the filename 
 	 */
 	public function testFileName()
 	{
-		$view = new BaseView;
-		$this->assertEquals("BaseView.mustache", $view->get_file());
+		$this->assertEquals("BaseView.mustache", $this->view->getFile());
 	}
 
 	/**
@@ -22,8 +34,7 @@ class ViewTest extends PHPUnit_Framework_TestCase
 	 */
 	public function testLoad()
 	{
-		$view = new BaseView;
-		$this->assertEquals("Welcome Dave", substr($view->render(), 0, 12));
+		$this->assertEquals("Welcome Dave", substr($this->view->render(), 0, 12));
 	}
 
 	/**
@@ -31,10 +42,8 @@ class ViewTest extends PHPUnit_Framework_TestCase
 	 */
 	public function testGetSet()
 	{
-		$view = new BaseView;
-		$view->name = "Nicholas";
-
-		$this->assertEquals("Nicholas", $view->name);
+		$this->view->name = "Nicholas";
+		$this->assertEquals("Nicholas", $this->view->name);
 	}
 
 	/**
@@ -42,23 +51,12 @@ class ViewTest extends PHPUnit_Framework_TestCase
 	 */
 	public function testParams()
 	{
-		$view = new BaseView;
-		$view->set(array(
+		$this->view->set(array(
 			'language' => "PHP"
 		));
 
-		$this->assertEquals("Dave", $view->name);
-		$this->assertEquals("PHP", $view->language);
-	}
-
-	/**
-	 * Test a full render cycle.
-	 */
-	public function testRender()
-	{
-		$view = new BaseView;
-
-		$this->assertEquals("Welcome Dave", substr($view->render(), 0, 12));
+		$this->assertEquals("Dave", $this->view->name);
+		$this->assertEquals("PHP", $this->view->language);
 	}
 
 }

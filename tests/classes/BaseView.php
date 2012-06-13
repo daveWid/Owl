@@ -23,7 +23,7 @@ class BaseView extends \Owl\View
 	 *
 	 * @param \Owl\Layout $layout  The layout this view was assed to.
 	 */
-	public function added_to_layout(\Owl\Layout $layout)
+	public function addedToLayout(\Owl\Layout $layout)
 	{
 		$layout->title .= $this->title;
 		$layout->css[] = new \Owl\Asset\Css("css/slideshow.css");
@@ -32,7 +32,7 @@ class BaseView extends \Owl\View
 	/**
 	 * Does the content have a list?
 	 */
-	public function has_list()
+	public function hasList()
 	{
 		return empty($this->list) === false;
 	}

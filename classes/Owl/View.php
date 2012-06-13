@@ -20,7 +20,7 @@ abstract class View
 	 *
 	 * @return \Owl\Engine  The template rendering engine.
 	 */
-	public static function get_engine()
+	public static function getEngine()
 	{
 		return self::$engine;
 	}
@@ -31,7 +31,7 @@ abstract class View
 	 *
 	 * @param \Owl\Engine $engine  The rendering engine
 	 */
-	public static function set_engine(\Owl\Engine $engine)
+	public static function setEngine(\Owl\Engine $engine)
 	{
 		self::$engine = $engine;
 	}
@@ -46,7 +46,7 @@ abstract class View
 	 *
 	 * @return \Owl\Finder
 	 */
-	public static function get_finder()
+	public static function getFinder()
 	{
 		return self::$finder;
 	}
@@ -56,7 +56,7 @@ abstract class View
 	 *
 	 * @param \Owl\Finder $finder  The file finder class
 	 */
-	public static function set_finder(\Owl\Finder $finder)
+	public static function setFinder(\Owl\Finder $finder)
 	{
 		self::$finder = $finder;
 	}
@@ -67,9 +67,9 @@ abstract class View
 	 */
 	public function __construct()
 	{
-		if (self::get_engine() === null)
+		if (self::getEngine() === null)
 		{
-			self::set_engine(new \Owl\Engine\Mustache);
+			self::setEngine(new \Owl\Engine\Mustache);
 		}
 	}
 
@@ -105,7 +105,7 @@ abstract class View
 	 *
 	 * @return array
 	 */
-	public function get_partials()
+	public function getPartials()
 	{
 		return $this->partials;
 	}
@@ -115,7 +115,7 @@ abstract class View
 	 *
 	 * @return string
 	 */
-	public function get_file()
+	public function getFile()
 	{
 		// Normalize namespace separators
 		$file = str_replace(array("\\", "_"), DIRECTORY_SEPARATOR, get_class($this));
@@ -132,10 +132,10 @@ abstract class View
 	{
 		if ($file === null)
 		{
-			$file = $this->get_file();
+			$file = $this->getFile();
 		}
 
-		return file_get_contents(self::get_finder()->find($file));
+		return file_get_contents(self::getFinder()->find($file));
 	}
 
 	/**
@@ -144,7 +144,7 @@ abstract class View
 	 *
 	 * @param \Owl\Layout $layout  The layout that this view was added to
 	 */
-	public function added_to_layout(\Owl\Layout $layout)
+	public function addedToLayout(\Owl\Layout $layout)
 	{
 		// This does nothing by default...
 	}
@@ -159,7 +159,7 @@ abstract class View
 	public function render(array $partials = array())
 	{
 		$partials = array_merge($this->partials, $partials);
-		return self::get_engine()->render($this->load(), $this, $partials);
+		return self::getEngine()->render($this->load(), $this, $partials);
 	}
 
 	/**

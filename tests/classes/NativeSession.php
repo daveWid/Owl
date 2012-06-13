@@ -7,7 +7,7 @@ class NativeSession implements \Owl\ISession
 		//session_start();
 	}
 	
-	public function get_once($name, $default = false)
+	public function getOnce($name, $default = false)
 	{
 		$value = $default;
 		

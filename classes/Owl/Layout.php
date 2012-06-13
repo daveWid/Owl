@@ -50,7 +50,7 @@ abstract class Layout extends \Owl\View
 	 *
 	 * @return mixed
 	 */
-	public function get_content()
+	public function getContent()
 	{
 		return $this->content;
 	}
@@ -63,14 +63,14 @@ abstract class Layout extends \Owl\View
 	 * @param  mixed $content  The content.
 	 * @return \Owl\Layout     $this
 	 */
-	public function set_content($content)
+	public function setContent($content)
 	{
 		$this->content = $content;
 
 		if ($content instanceof \Owl\View)
 		{
-			$content->added_to_layout($this);
-			$this->partials['content'] = $this->load($content->get_file());
+			$content->addedToLayout($this);
+			$this->partials['content'] = $this->load($content->getFile());
 			$this->has_view = true;
 		}
 		else
@@ -92,7 +92,7 @@ abstract class Layout extends \Owl\View
 	{
 		if ($this->has_view)
 		{
-			$partials = array_merge($this->content->get_partials(), $partials);
+			$partials = array_merge($this->content->getPartials(), $partials);
 		}
 
 		return parent::render($partials);

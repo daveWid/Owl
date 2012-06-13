@@ -14,16 +14,22 @@ class LayoutTest extends PHPUnit_Framework_TestCase
 	public $layout;
 
 	/**
+	 * @var \Owl\View    The base view
+	 */
+	public $view;
+
+	/**
 	 * Set the template path 
 	 */
 	public function setUp()
 	{
-		$this->layout = new LayoutView;
-
 		$path = __DIR__.DIRECTORY_SEPARATOR."views".DIRECTORY_SEPARATOR;
 
 		$finder = new \Owl\Finder\FileSystem($path);
-		\Owl\View::set_finder($finder);
+		\Owl\View::setFinder($finder);
+
+		$this->layout = new LayoutView;
+		$this->view = new BaseView;
 
 		parent::setUp();
 	}
@@ -33,16 +39,13 @@ class LayoutTest extends PHPUnit_Framework_TestCase
 	 */
 	public function testContent()
 	{
-		$content = new BaseView;
-		$html = "<h1>Hello World</h1>";
-
 		// View content...
-		$this->layout->set_content($content);
-		$this->assertInstanceOf("Owl\\View", $this->layout->get_content());
+		$this->layout->setContent($this->view);
+		$this->assertInstanceOf("Owl\\View", $this->layout->getContent());
 
 		// Raw html
-		$this->layout->set_content($html);
-		$this->assertInternalType("string", $this->layout->get_content());
+		$this->layout->setContent("<h1>Hello World</h1>");
+		$this->assertInternalType("string", $this->layout->getContent());
 	}
 
 	/**
@@ -50,10 +53,8 @@ class LayoutTest extends PHPUnit_Framework_TestCase
 	 */
 	public function testContentPartial()
 	{
-		$content = new BaseView;
-		$this->layout->set_content($content);
-
-		$this->assertArrayHasKey("content", $this->layout->get_partials());
+		$this->layout->setContent($this->view);
+		$this->assertArrayHasKey("content", $this->layout->getPartials());
 	}
 
 	/**
@@ -61,8 +62,7 @@ class LayoutTest extends PHPUnit_Framework_TestCase
 	 */
 	public function testContentPassthru()
 	{
-		$content = new BaseView;
-		$this->layout->set_content($content);
+		$this->layout->setContent($this->view);
 
 		$this->assertTrue(isset($this->layout->name));
 		$this->assertRegExp("/<title>Owl Testing!<\/title>/", $this->layout->render());
@@ -73,9 +73,7 @@ class LayoutTest extends PHPUnit_Framework_TestCase
 	 */
 	public function testAddedToLayout()
 	{
-		$content = new BaseView;
-
-		$this->layout->set_content($content);
+		$this->layout->setContent($this->view);
 		$this->assertCount(1, $this->layout->css); // Added from the BaseView
 	}
 

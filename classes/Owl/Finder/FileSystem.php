@@ -24,7 +24,7 @@ class FileSystem implements \Owl\Finder
 	 */
 	public function __construct($path)
 	{
-		$this->set_path($path);
+		$this->setPath($path);
 	}
 
 	/**
@@ -32,7 +32,7 @@ class FileSystem implements \Owl\Finder
 	 *
 	 * @return string
 	 */
-	public function get_path()
+	public function getPath()
 	{
 		return $this->path;
 	}
@@ -43,7 +43,7 @@ class FileSystem implements \Owl\Finder
 	 * @param  string $path            The full server path to use as a starting point
 	 * @return \Owl\Finder\FileSystem  $this
 	 */
-	public function set_path($path)
+	public function setPath($path)
 	{
 		$this->path = rtrim($path, DIRECTORY_SEPARATOR).DIRECTORY_SEPARATOR;
 	}

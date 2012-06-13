@@ -14,7 +14,7 @@ class MessageTest extends PHPUnit_Framework_TestCase
 	public function setUp()
 	{
 		$session = new NativeSession;
-		\Owl\Message::set_session($session);
+		\Owl\Message::setSession($session);
 
 		parent::setUp();
 	}

@@ -35,7 +35,7 @@ all view and layout classes, so you only need to set it once per request.
 
 // Please don't do this as the Mustache engine is default, this is just an example
 $engine = new \Owl\Engine\Mustache;
-\Owl\View::set_engine($engine);
+\Owl\View::setEngine($engine);
 ```
 
 ### File Finder
@@ -50,7 +50,7 @@ that uses the cascading file system (Badass!).
 
 $path = __DIR__.DIRECTORY_SEPARATOR."views";
 $finder = new \Owl\Finder\FileSystem($path);
-\Owl\View::set_finder($finder);
+\Owl\View::setFinder($finder);
 ```
 
 ## Usage
@@ -91,7 +91,7 @@ Then all we will need to do is render our view class (echo works also).
 // Assuming file finder is already set from above.
 $content = new Homepage;
 
-$content->render(); // Output: Hello Dave
+echo $content->render(); // Output: Hello Dave
 // echo $content; <-- this works too
 ```
 
@@ -143,8 +143,8 @@ Then we can pass in either an \Owl\View class or raw html into the layout.
 <?php
 
 $layout = new Layout_Browser;
-$layout->set_content($content);
-$layout->render();
+$layout->setContent($content);
+echo $layout->render();
 ```
 
 When the layout is rendered, it will replace the content partial {{> content}} with
@@ -155,15 +155,15 @@ layout and change the page content based on the page. Pretty cool huh?
 
 ### Added To Layout
 
-One last thing you should know about is the `added_to_layout` function.
+One last thing you should know about is the `addedToLayout` function.
 
-When an \Owl\View extended class is passed into a layout class, the `added_to_layout`
+When an \Owl\View extended class is passed into a layout class, the `addedToLayout`
 function is called and the current layout is passed in as the only argument.
 
 This is powerful because now you can use this function to add things to the layout.
 
 Say you wanted to add some more js or css files because the specific page is a little
-more dynamic or styled differently, you would do it in the `added_to_layout` function.
+more dynamic or styled differently, you would do it in the `addedToLayout` function.
 
 For a quick example, I will add the title from the view class onto the layout
 title.
@@ -176,7 +176,7 @@ class Homepage extends \Owl\View
 	public $name = "Dave";
 	public $title = "Welcome";
 
-	public function added_to_layout(\Owl\Layout $layout)
+	public function addedToLayout(\Owl\Layout $layout)
 	{
 		$layout->title .= "» {$this->title}";
 	}
@@ -205,7 +205,7 @@ Once you have your session driver you will need to inject it into the class.
 
 // Anything that implements \Owl\ISession will work.
 $session = new \Owl\Session\Kohana;
-\Owl\Message::set_session($session);
+\Owl\Message::setSession($session);
 ```
 
 Now the library is ready to go!
@@ -251,7 +251,6 @@ There are also methods that are wrappers for the different types of messages.
 \Owl\Message::notice($message);
 \Owl\Message::warn($message);
 ```
-
 
 ## Exploration
 

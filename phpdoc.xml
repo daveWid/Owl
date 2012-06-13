@@ -2,10 +2,10 @@
 <phpdoc>
 	<title>Owl</title>
 	<parser>
-		<target>reports/api</target>
+		<target>developer/api</target>
 	</parser>
 	<transformer>
-		<target>reports/api</target>
+		<target>developer/api</target>
 	</transformer>
 	<files>
 		<directory>classes/Owl/</directory>

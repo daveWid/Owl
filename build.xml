@@ -4,9 +4,9 @@
 
 	<!-- Package -->
 	<target name="package">
-		<property name="file" value="package/Owl-${version}.zip" />
+		<property name="file" value="developer/package/Owl-${version}.zip" />
 
-		<mkdir dir="package" />
+		<mkdir dir="developer/package" />
 		<delete file="${file}" />
 
 		<zip destfile="${file}">

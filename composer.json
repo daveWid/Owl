@@ -1,28 +1,28 @@
 {
-	'name': 'davewid/owl',
-	'description': 'A class based View library for 5.3+',
-	'keywords': ['view','view class'],
-	'homepage': 'https://github.com/daveWid/Owl',
-	'type': 'library',
-	'license': 'MIT',
-	'authors': [
+	"name": "davewid/owl",
+	"description": "A class based View library for 5.3+",
+	"keywords": ["view","view class"],
+	"homepage": "https://github.com/daveWid/Owl",
+	"type": "library",
+	"license": "MIT",
+	"authors": [
 		{
-			'name': 'Dave Widmer',
-			'email': 'dave@davewidmer.net',
-			'homepage': 'http://www.davewidmer.net'
+			"name": "Dave Widmer",
+			"email": "dave@davewidmer.net",
+			"homepage": "http://www.davewidmer.net"
 		}
 	],
-	'repositories': [
+	"repositories": [
 		{
-			'type': 'vcs',
-			'url': 'https://github.com/bobthecow/mustache.php'
+			"type": "vcs",
+			"url": "https://github.com/bobthecow/mustache.php"
 		}
 	],
-	'require':{
-		'php': ">=5.3",
-		'mustache/mustache': 'dev'
+	"require":{
+		"php": ">=5.3",
+		"mustache/mustache": "dev-dev"
 	},
-	'autoload': {
-		'psr-0': { "Owl": "classes/" }
+	"autoload": {
+		"psr-0": { "Owl": "classes/" }
 	}
 }

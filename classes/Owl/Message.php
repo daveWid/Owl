@@ -12,16 +12,16 @@ namespace Owl;
 class Message
 {
 	/**
-	 * @var \Owl\ISession  The object to use to to save the session data.
+	 * @var \Owl\Session  The object to use to to save the session data.
 	 */
 	private static $session = null;
 
 	/**
 	 * Set the session class used within this class.
 	 *
-	 * @param ISession $session 
+	 * @param \Owl\Session $session
 	 */
-	public static function setSession(ISession $session)
+	public static function setSession(\Owl\Session $session)
 	{
 		self::$session = $session;
 	}

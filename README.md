@@ -195,7 +195,7 @@ in your application
 ### Setup
 
 Before you can use the Message class you will need to supply a session driver
-that implements `\Owl\ISession`. If you are using the Kohana framework, a
+that implements `\Owl\Session`. If you are using the Kohana framework, a
 wrapper class for the internal `Session` class has been provided at `\Owl\Session\Kohana`.
 
 Once you have your session driver you will need to inject it into the class.
@@ -203,7 +203,7 @@ Once you have your session driver you will need to inject it into the class.
 ``` php
 <?php
 
-// Anything that implements \Owl\ISession will work.
+// Anything that implements \Owl\Session will work.
 $session = new \Owl\Session\Kohana;
 \Owl\Message::setSession($session);
 ```

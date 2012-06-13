@@ -1,6 +1,6 @@
 <?php
 
-class NativeSession implements \Owl\ISession
+class NativeSession implements \Owl\Session
 {
 	public function __construct()
 	{

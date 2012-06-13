@@ -8,7 +8,7 @@ namespace Owl\Session;
  * @package   Owl
  * @author    Dave Widmer <dwidmer@bgsu.edu>
  */
-class Kohana implements \Owl\ISession
+class Kohana implements \Owl\Session
 {
 	/**
 	 * Retrieve a session variable by the given name, if that session variable

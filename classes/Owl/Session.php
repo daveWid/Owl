@@ -3,13 +3,13 @@
 namespace Owl;
 
 /**
- * The ISession interface is used to define a session driver that can be used
+ * The Session interface is used to define a session driver that can be used
  * to set and get session data for the Owl library.
  *
  * @package   Owl
  * @author    Dave Widmer <dwidmer@bgsu.edu>
  */
-interface ISession
+interface Session
 {
 	/**
 	 * Retrieve a session variable by the given name, if that session variable

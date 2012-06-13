@@ -15,10 +15,9 @@ interface Engine
 	 * Render the given template and view object.
 	 *
 	 * @param  string $template  The template to render
-	 * @param  mixed  $view      The view object (or array) to add
-	 * @param  array  $partials  Any partials
+	 * @param  mixed  $data      The view object (or array) to add
 	 * @return string            The rendered template in html
 	 */
-	public function render($template = null, $view = null, $partials = null);
+	public function render($template, $data);
 
 }

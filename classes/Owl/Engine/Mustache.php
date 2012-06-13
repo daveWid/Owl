@@ -8,4 +8,4 @@ namespace Owl\Engine;
  * @package   Owl
  * @author    Dave Widmer <dwidmer@bgsu.edu>
  */
-class Mustache extends \Mustache implements \Owl\Engine{}
+class Mustache extends \Mustache_Engine implements \Owl\Engine{}

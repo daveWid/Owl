@@ -186,6 +186,73 @@ Now we the layout is rendered the title tag will render out as so.
 
 `<title>My Page &raquo; Welcome</title>`
 
+
+## Flash Messages
+
+The Owl library provides a Message class so you can pass messages between requests
+in your application
+
+### Setup
+
+Before you can use the Message class you will need to supply a session driver
+that implements `\Owl\ISession`. If you are using the Kohana framework, a
+wrapper class for the internal `Session` class has been provided at `\Owl\Session\Kohana`.
+
+Once you have your session driver you will need to inject it into the class.
+
+``` php
+<?php
+
+// Anything that implements \Owl\ISession will work.
+$session = new \Owl\Session\Kohana;
+\Owl\Message::set_session($session);
+```
+
+Now the library is ready to go!
+
+#### Getting
+
+To get a message all you need to do is run `get`:
+
+``` php
+<?php
+
+\Owl\Message::get();
+```
+
+If no message is found this function will return `false`.
+
+#### Setting
+
+To set a flash message all it takes is the following:
+
+``` php
+<?php
+
+\Owl\Message::set($type, $message);
+```
+
+#### Properties
+
+Name | type | Description
+-----|------|-------------
+type | string | The type of message (this can be anything)
+message | mixed | The message you want to pass along. This can be anything, but a string or array of strings will probably work best
+
+### Wrapper methods
+
+There are also methods that are wrappers for the different types of messages.
+
+``` php
+<?php
+
+\Owl\Message::error($message);
+\Owl\Message::success($message);
+\Owl\Message::notice($message);
+\Owl\Message::warn($message);
+```
+
+
 ## Exploration
 
 There is more to explore in the Owl library, but I'll leave that to you. If you

@@ -77,4 +77,10 @@ class LayoutTest extends PHPUnit_Framework_TestCase
 		$this->assertCount(1, $this->layout->css); // Added from the BaseView
 	}
 
+	public function testRenderWithHTML()
+	{
+		$this->layout->setContent("<h1>Injected HTML</h1>");
+		$this->assertRegExp("/<h1>Injected HTML<\/h1>/", $this->layout->render());
+	}
+
 }

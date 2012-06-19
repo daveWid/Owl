@@ -4,18 +4,30 @@ Owl is a view library that can interface with different template rendering engin
 Owl uses [Mustache](https://github.com/bobthecow/mustache.php) as the default
 rendering engine. Requires PHP 5.3+.
 
-## Downloading
+## Installing
 
-Visit the [downloads](https://github.com/daveWid/Owl/downloads) page and click
-on the latest version to grab the files.
+As of version 1.2.x you can now use [Composer](http://getcomposer.org/) to
+install the Owl library. Owl is hosted on [Packagist](http://packagist.org/packages/davewid/owl)
+so all you will need to add to the require section of composer.json file is below.
 
-Once you have the files downloaded and unzipped, move the classes over to your
-application.
+``` javascript
 
-## Autoloading
+"require":{
+	....
+	"davewid/owl": "1.2.*"
+	....
+}
 
-Owl fully supports [PSR-0](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md)
-autoloading.
+```
+
+Alternatively you can visit the [downloads](https://github.com/daveWid/Owl/downloads)
+page and click on the latest version to grab the files. If you download the files
+from github you will need to setup autoloading by hand.
+
+## PHP-FIG
+
+Owl is in compliance with [PSR-0](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md)
+and [PSR-1](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standard.md)
 
 ## Setup
 
@@ -26,9 +38,10 @@ Below are the two things you can inject, the rendering engine and the file finde
 ### Engine
 
 By default, a Mustache rendering engine is setup. If you would like to use a
-different engine you can set it with `set_engine`. Your engine will have to
+different engine you can set it with `setEngine`. Your engine will have to
 implement the `\Owl\Engine` interface. The rendering engine is shared between
-all view and layout classes, so you only need to set it once per request.
+any view and layout classes you use in a request, so you only need to set the 
+engine once per request.
 
 ``` php
 <?php
@@ -74,7 +87,7 @@ Along with the view class you will need the mustache template. The template file
 are loaded automatically from the template directory, based on the class name.
 All underscores and namespace separators in the class name are converted to
 directory separators. If you want to specify the full path to your files manually,
-override the `get_file` function.
+override the `getFile` function.
 
 In our example above, we will want to create our template at
 `__DIR__/views/Homepage.mustache`.
@@ -157,7 +170,7 @@ layout and change the page content based on the page. Pretty cool huh?
 
 One last thing you should know about is the `addedToLayout` function.
 
-When an \Owl\View extended class is passed into a layout class, the `addedToLayout`
+When a class that extends \Owl\View is passed into a layout class, the `addedToLayout`
 function is called and the current layout is passed in as the only argument.
 
 This is powerful because now you can use this function to add things to the layout.
@@ -210,7 +223,7 @@ $session = new \Owl\Session\Kohana;
 
 Now the library is ready to go!
 
-#### Getting
+#### Getting Messages
 
 To get a message all you need to do is run `get`:
 
@@ -222,7 +235,7 @@ To get a message all you need to do is run `get`:
 
 If no message is found this function will return `false`.
 
-#### Setting
+#### Setting Messages
 
 To set a flash message all it takes is the following:
 
@@ -260,7 +273,7 @@ have any questions/bugs/concerns please use the bug tracker here on github.
 ## Hacking
 
 If you use a different framework than those currently supported fork this repo
-and add those files. The only thing I as is to please use and send pull requests
+and add those files. The only thing I ask is to please use and send pull requests
 on the develop branch.
 
 ## License

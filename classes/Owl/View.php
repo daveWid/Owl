@@ -119,6 +119,8 @@ abstract class View
 	{
 		// Normalize namespace separators
 		$file = str_replace(array("\\", "_"), DIRECTORY_SEPARATOR, get_class($this));
+		$file = ltrim($file, "View".DIRECTORY_SEPARATOR);
+
 		return $file.".mustache";
 	}
 

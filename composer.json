@@ -12,15 +12,9 @@
 			"homepage": "http://www.davewidmer.net"
 		}
 	],
-	"repositories": [
-		{
-			"type": "vcs",
-			"url": "https://github.com/bobthecow/mustache.php"
-		}
-	],
 	"require":{
 		"php": ">=5.3",
-		"mustache/mustache": "dev-dev"
+		"mustache/mustache": "2.0.*"
 	},
 	"autoload": {
 		"psr-0": { "Owl": "classes/" }

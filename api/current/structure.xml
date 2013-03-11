@@ -1,0 +1,1400 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project version="2.0.0a1" title="Owl">
+  <file path="Asset/Css.php" hash="6dbcd770bf5b595df659503aea26c090" package="Default">
+    <parse_markers>
+      <critical line="13" code="50019">No short description for property $href</critical>
+      <critical line="18" code="50019">No short description for property $media</critical>
+      <error line="1" code="50007">No page-level DocBlock was found in file Asset/Css.php</error>
+    </parse_markers>
+    <class final="false" abstract="false" namespace="Owl\Asset" line="11" package="Owl">
+      <name>Css</name>
+      <full_name>\Owl\Asset\Css</full_name>
+      <extends/>
+      <docblock line="5">
+        <description><![CDATA[A CSS asset for an Owl view]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="5" name="package" description="Owl"/>
+        <tag line="5" name="author" description="Dave Widmer &lt;dwidmer@bgsu.edu&gt;"/>
+      </docblock>
+      <property final="false" static="false" visibility="public" line="16" package="Default">
+        <name>$href</name>
+        <default><![CDATA[]]></default>
+        <docblock line="13">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="13" name="var" description="The href for the link" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="21" package="Default">
+        <name>$media</name>
+        <default><![CDATA[]]></default>
+        <docblock line="18">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="18" name="var" description="The media type" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Owl\Asset" line="29" package="">
+        <name>__construct</name>
+        <type>function</type>
+        <docblock line="23">
+          <description><![CDATA[Creates a new CSS view asset.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="23" name="param" description="The link href" type="string" variable="$href">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="23" name="param" description="The media type" type="string" variable="$media">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="29">
+          <name>$href</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="29">
+          <name>$media</name>
+          <default><![CDATA[null]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Owl\Asset" line="40" package="">
+        <name>__toString</name>
+        <type>function</type>
+        <docblock line="35">
+          <description><![CDATA[Renders the asset to html]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="35" name="return" description="The html for the &lt;link&gt;" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <file path="Asset/JavaScript.php" hash="27c51745806af21c19f7d6299ffe79b5" package="Default">
+    <parse_markers>
+      <critical line="13" code="50019">No short description for property $src</critical>
+      <error line="1" code="50007">No page-level DocBlock was found in file Asset/JavaScript.php</error>
+    </parse_markers>
+    <class final="false" abstract="false" namespace="Owl\Asset" line="11" package="Owl">
+      <name>JavaScript</name>
+      <full_name>\Owl\Asset\JavaScript</full_name>
+      <extends/>
+      <docblock line="5">
+        <description><![CDATA[A JavaScript asset for an owl view.]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="5" name="package" description="Owl"/>
+        <tag line="5" name="author" description="Dave Widmer &lt;dwidmer@bgsu.edu&gt;"/>
+      </docblock>
+      <property final="false" static="false" visibility="public" line="16" package="Default">
+        <name>$src</name>
+        <default><![CDATA[]]></default>
+        <docblock line="13">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="13" name="var" description="The src for the script tag" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Owl\Asset" line="23" package="">
+        <name>__construct</name>
+        <type>function</type>
+        <docblock line="18">
+          <description><![CDATA[Creates a new JS view asset.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="18" name="param" description="The script source" type="string" variable="$src">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="23">
+          <name>$src</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Owl\Asset" line="33" package="">
+        <name>__toString</name>
+        <type>function</type>
+        <docblock line="28">
+          <description><![CDATA[Renders the asset to html]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="28" name="return" description="The html for the &lt;script&gt;" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <file path="Asset/Meta.php" hash="28c848c19393a9e191f0a398aa3cdfc3" package="Default">
+    <parse_markers>
+      <critical line="13" code="50019">No short description for property $name</critical>
+      <critical line="18" code="50019">No short description for property $content</critical>
+      <error line="1" code="50007">No page-level DocBlock was found in file Asset/Meta.php</error>
+    </parse_markers>
+    <class final="false" abstract="false" namespace="Owl\Asset" line="11" package="Owl">
+      <name>Meta</name>
+      <full_name>\Owl\Asset\Meta</full_name>
+      <extends/>
+      <docblock line="5">
+        <description><![CDATA[A Metadata asset for an Owl view]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="5" name="package" description="Owl"/>
+        <tag line="5" name="author" description="Dave Widmer &lt;dwidmer@bgsu.edu&gt;"/>
+      </docblock>
+      <property final="false" static="false" visibility="public" line="16" package="Default">
+        <name>$name</name>
+        <default><![CDATA[]]></default>
+        <docblock line="13">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="13" name="var" description="The metadata name" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="21" package="Default">
+        <name>$content</name>
+        <default><![CDATA[]]></default>
+        <docblock line="18">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="18" name="var" description="The content for the metadata" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Owl\Asset" line="29" package="">
+        <name>__construct</name>
+        <type>function</type>
+        <docblock line="23">
+          <description><![CDATA[Creates a new Meta view asset.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="23" name="param" description="The metadata name" type="string" variable="$name">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="23" name="param" description="The content" type="string" variable="$content">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="29">
+          <name>$name</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="29">
+          <name>$content</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Owl\Asset" line="40" package="">
+        <name>__toString</name>
+        <type>function</type>
+        <docblock line="35">
+          <description><![CDATA[Renders the asset to html]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="35" name="return" description="The html for the &lt;meta&gt;" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <file path="Engine/Mustache.php" hash="2b64741e73c624e528e1a8044c48d816" package="Default">
+    <parse_markers>
+      <error line="1" code="50007">No page-level DocBlock was found in file Engine/Mustache.php</error>
+    </parse_markers>
+    <class final="false" abstract="false" namespace="Owl\Engine" line="11" package="Owl">
+      <name>Mustache</name>
+      <full_name>\Owl\Engine\Mustache</full_name>
+      <extends/>
+      <extends>\Owl\Engine</extends>
+      <docblock line="5">
+        <description><![CDATA[The rendering engine using Mustache.]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="5" name="package" description="Owl"/>
+        <tag line="5" name="author" description="Dave Widmer &lt;dwidmer@bgsu.edu&gt;"/>
+      </docblock>
+      <property final="false" static="false" visibility="private" line="16" package="Default">
+        <name>$mustache</name>
+        <default><![CDATA[]]></default>
+        <docblock line="13">
+          <description><![CDATA[Mustache_Engine  The mustache rendering engine.]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Owl\Engine" line="21" package="">
+        <name>__construct</name>
+        <type>function</type>
+        <docblock line="18">
+          <description><![CDATA[Creates a new mustache engine.]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Owl\Engine" line="34" package="">
+        <name>render</name>
+        <type>function</type>
+        <docblock line="26">
+          <description><![CDATA[Render the given template and view object.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="26" name="param" description="The template to render" type="string" variable="$template">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="26" name="param" description="The view object (or array) to add'" type="mixed" variable="$data">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="26" name="param" description="A list of partials" type="array" variable="$partials">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="26" name="return" description="The rendered template in html" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="34">
+          <name>$template</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="34">
+          <name>$data</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="34">
+          <name>$partials</name>
+          <default><![CDATA[array()]]></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="Engine.php" hash="f4b107f3f118a71e843f024848fee912" package="Default">
+    <parse_markers>
+      <error line="1" code="50007">No page-level DocBlock was found in file Engine.php</error>
+    </parse_markers>
+    <interface namespace="Owl" line="12" package="Owl">
+      <name>Engine</name>
+      <full_name>\Owl\Engine</full_name>
+      <extends/>
+      <docblock line="5">
+        <description><![CDATA[This interface specifies the methods necessary to be compatible with the Owl
+library as a template rendering engine.]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="5" name="package" description="Owl"/>
+        <tag line="5" name="author" description="Dave Widmer &lt;dwidmer@bgsu.edu&gt;"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Owl" line="22" package="">
+        <name>render</name>
+        <type>function</type>
+        <docblock line="14">
+          <description><![CDATA[Render the given template and view object.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="14" name="param" description="The template to render" type="string" variable="$template">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="14" name="param" description="The view object (or array) to add" type="mixed" variable="$data">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="14" name="param" description="A list of content partials to add while rendering" type="array" variable="$partials">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="14" name="return" description="The rendered template in html" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="22">
+          <name>$template</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="22">
+          <name>$data</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="22">
+          <name>$partials</name>
+          <default><![CDATA[array()]]></default>
+          <type/>
+        </argument>
+      </method>
+    </interface>
+  </file>
+  <file path="Exception.php" hash="7bacc179e3d68fcfb6ab8a8f2b51f178" package="Default">
+    <parse_markers>
+      <error line="1" code="50007">No page-level DocBlock was found in file Exception.php</error>
+    </parse_markers>
+    <class final="false" abstract="false" namespace="Owl" line="11" package="Owl">
+      <name>Exception</name>
+      <full_name>\Owl\Exception</full_name>
+      <extends>\Exception</extends>
+      <docblock line="5">
+        <description><![CDATA[Exceptions for the Owl library]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="5" name="package" description="Owl"/>
+        <tag line="5" name="author" description="Dave Widmer &lt;dwidmer@bgsu.edu&gt;"/>
+      </docblock>
+    </class>
+  </file>
+  <file path="Finder/FileSystem.php" hash="f590cf48e3f832c306ef94c02dbf6e79" package="Default">
+    <parse_markers>
+      <critical line="14" code="50019">No short description for property $path</critical>
+      <error line="1" code="50007">No page-level DocBlock was found in file Finder/FileSystem.php</error>
+    </parse_markers>
+    <class final="false" abstract="false" namespace="Owl\Finder" line="12" package="Owl">
+      <name>FileSystem</name>
+      <full_name>\Owl\Finder\FileSystem</full_name>
+      <extends/>
+      <extends>\Owl\Finder</extends>
+      <docblock line="5">
+        <description><![CDATA[Finds files from the file system. It will look through the base directory
+for the file]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="5" name="package" description="Owl"/>
+        <tag line="5" name="author" description="Dave Widmer &lt;dwidmer@bgsu.edu&gt;"/>
+      </docblock>
+      <property final="false" static="false" visibility="private" line="17" package="Default">
+        <name>$path</name>
+        <default><![CDATA[]]></default>
+        <docblock line="14">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="14" name="var" description="The base path to look for files" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Owl\Finder" line="25" package="">
+        <name>__construct</name>
+        <type>function</type>
+        <docblock line="19">
+          <description><![CDATA[Creates a new file system file lookup. You will need to supply the base
+path.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="19" name="param" description="The full base path." type="string" variable="$path">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="25">
+          <name>$path</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Owl\Finder" line="35" package="">
+        <name>getPath</name>
+        <type>function</type>
+        <docblock line="30">
+          <description><![CDATA[Gets the base path.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="30" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Owl\Finder" line="46" package="">
+        <name>setPath</name>
+        <type>function</type>
+        <docblock line="40">
+          <description><![CDATA[Sets the base path for file lookup.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="40" name="param" description="The full server path to use as a starting point" type="string" variable="$path">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="40" name="return" description="$this" type="\Owl\Finder\FileSystem">
+            <type by_reference="false">\Owl\Finder\FileSystem</type>
+          </tag>
+        </docblock>
+        <argument line="46">
+          <name>$path</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Owl\Finder" line="59" package="">
+        <name>find</name>
+        <type>function</type>
+        <docblock line="51">
+          <description><![CDATA[Given the filename, attempts to find a file in the filesystem.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="51" name="throws" description="When a file can't be found" type="\Owl\Exception">
+            <type by_reference="false">\Owl\Exception</type>
+          </tag>
+          <tag line="51" name="param" description="The name of the file" type="string" variable="$file">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="51" name="return" description="The full file path to the file" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="59">
+          <name>$file</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="Finder/Kohana.php" hash="c564868291bb2a4e60402576551cc02f" package="Default">
+    <parse_markers>
+      <error line="1" code="50007">No page-level DocBlock was found in file Finder/Kohana.php</error>
+    </parse_markers>
+    <class final="false" abstract="false" namespace="Owl\Finder" line="12" package="Owl">
+      <name>Kohana</name>
+      <full_name>\Owl\Finder\Kohana</full_name>
+      <extends/>
+      <extends>\Owl\Finder</extends>
+      <docblock line="5">
+        <description><![CDATA[Finds files from the file system when using the Kohana framework using the
+Cascading File system. Bad-ass!]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="5" name="package" description="Owl"/>
+        <tag line="5" name="author" description="Dave Widmer &lt;dwidmer@bgsu.edu&gt;"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Owl\Finder" line="22" package="">
+        <name>find</name>
+        <type>function</type>
+        <docblock line="14">
+          <description><![CDATA[Given the filename, attempts to find a file in the filesystem.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="14" name="throws" description="When a file can't be found" type="\Owl\Exception">
+            <type by_reference="false">\Owl\Exception</type>
+          </tag>
+          <tag line="14" name="param" description="The name of the file" type="string" variable="$file">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="14" name="return" description="The full file path to the file" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="22">
+          <name>$file</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="Finder.php" hash="50116c78534046b68649e352d88356ee" package="Default">
+    <parse_markers>
+      <error line="1" code="50007">No page-level DocBlock was found in file Finder.php</error>
+    </parse_markers>
+    <interface namespace="Owl" line="11" package="Owl">
+      <name>Finder</name>
+      <full_name>\Owl\Finder</full_name>
+      <extends/>
+      <docblock line="5">
+        <description><![CDATA[This interface specifies the methods necessary locate template files.]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="5" name="package" description="Owl"/>
+        <tag line="5" name="author" description="Dave Widmer &lt;dwidmer@bgsu.edu&gt;"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Owl" line="21" package="">
+        <name>find</name>
+        <type>function</type>
+        <docblock line="13">
+          <description><![CDATA[Given the filename, attempts to find a file in the filesystem.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="13" name="throws" description="When a file can't be found" type="\Owl\Exception">
+            <type by_reference="false">\Owl\Exception</type>
+          </tag>
+          <tag line="13" name="param" description="The name of the file" type="string" variable="$file">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="13" name="return" description="The full file path to the file" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="21">
+          <name>$file</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+    </interface>
+  </file>
+  <file path="Form/Option.php" hash="bbcba7dbc0cbe33c74e6557fb95df601" package="Default">
+    <parse_markers>
+      <critical line="13" code="50019">No short description for property $label</critical>
+      <critical line="18" code="50019">No short description for property $value</critical>
+      <critical line="23" code="50019">No short description for property $selected</critical>
+      <error line="28" code="50014">Name of argument $value does not match with the DocBlock's name $name in __construct()</error>
+      <notice line="28" code="50013">Parameter $name could not be found in __construct()</notice>
+      <error line="1" code="50007">No page-level DocBlock was found in file Form/Option.php</error>
+    </parse_markers>
+    <class final="false" abstract="false" namespace="Owl\Form" line="11" package="Owl">
+      <name>Option</name>
+      <full_name>\Owl\Form\Option</full_name>
+      <extends/>
+      <docblock line="5">
+        <description><![CDATA[A select option class.]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="5" name="package" description="Owl"/>
+        <tag line="5" name="author" description="Dave Widmer &lt;dwidmer@bgsu.edu&gt;"/>
+      </docblock>
+      <property final="false" static="false" visibility="public" line="16" package="Default">
+        <name>$label</name>
+        <default><![CDATA[]]></default>
+        <docblock line="13">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="13" name="var" description="The label for the option" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="21" package="Default">
+        <name>$value</name>
+        <default><![CDATA[]]></default>
+        <docblock line="18">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="18" name="var" description="The option value" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="26" package="Default">
+        <name>$selected</name>
+        <default><![CDATA[false]]></default>
+        <docblock line="23">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="23" name="var" description="Is this option the selected one?" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Owl\Form" line="35" package="">
+        <name>__construct</name>
+        <type>function</type>
+        <docblock line="28">
+          <description><![CDATA[Creates a new CSS view asset.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="28" name="param" description="The name of the" type="string" variable="$name">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="28" name="param" description="The option label" type="string" variable="$label">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="28" name="param" description="The selected value" type="string" variable="$selected">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="35">
+          <name>$value</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="35">
+          <name>$label</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="35">
+          <name>$selected</name>
+          <default><![CDATA[""]]></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="Layout.php" hash="2c55a696a359565698e9dfbd9756efcf" package="Default">
+    <parse_markers>
+      <critical line="13" code="50019">No short description for property $content</critical>
+      <critical line="18" code="50019">No short description for property $charset</critical>
+      <critical line="23" code="50019">No short description for property $css</critical>
+      <critical line="28" code="50019">No short description for property $js</critical>
+      <critical line="33" code="50019">No short description for property $meta</critical>
+      <critical line="38" code="50019">No short description for property $title</critical>
+      <critical line="43" code="50019">No short description for property $has_view</critical>
+      <error line="1" code="50007">No page-level DocBlock was found in file Layout.php</error>
+    </parse_markers>
+    <class final="false" abstract="true" namespace="Owl" line="11" package="Owl">
+      <name>Layout</name>
+      <full_name>\Owl\Layout</full_name>
+      <extends>\Owl\View</extends>
+      <docblock line="5">
+        <description><![CDATA[A Layout (template) View class.]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="5" name="package" description="Owl"/>
+        <tag line="5" name="author" description="Dave Widmer &lt;dwidmer@bgsu.edu&gt;"/>
+      </docblock>
+      <property final="false" static="false" visibility="private" line="16" package="Default">
+        <name>$content</name>
+        <default><![CDATA[null]]></default>
+        <docblock line="13">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="13" name="var" description="The content to inject into the view." type="mixed">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="21" package="Default">
+        <name>$charset</name>
+        <default><![CDATA["utf-8"]]></default>
+        <docblock line="18">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="18" name="var" description="The character set for the page" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="26" package="Default">
+        <name>$css</name>
+        <default><![CDATA[array()]]></default>
+        <docblock line="23">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="23" name="var" description="An array of css files in a href =&gt; , media =&gt; format" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="31" package="Default">
+        <name>$js</name>
+        <default><![CDATA[array()]]></default>
+        <docblock line="28">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="28" name="var" description="An array of js files in a src =&gt; format" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="36" package="Default">
+        <name>$meta</name>
+        <default><![CDATA[array()]]></default>
+        <docblock line="33">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="33" name="var" description="An array of metadata in a name =&gt; , content =&gt; format" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="41" package="Default">
+        <name>$title</name>
+        <default><![CDATA[""]]></default>
+        <docblock line="38">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="38" name="var" description="The page title." type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="46" package="Default">
+        <name>$has_view</name>
+        <default><![CDATA[false]]></default>
+        <docblock line="43">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="43" name="var" description="Does this layout have an \Owl\View?" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Owl" line="53" package="">
+        <name>getContent</name>
+        <type>function</type>
+        <docblock line="48">
+          <description><![CDATA[The content that will replace {{> content}} in the layout template.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="48" name="return" description="" type="mixed">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Owl" line="66" package="">
+        <name>setContent</name>
+        <type>function</type>
+        <docblock line="58">
+          <description><![CDATA[Sets the content that will replace {{> content}} in the template. This
+can be anything that can be echo'ed out, but if it is an \Owl\View class
+then the added_to_layout function will be called.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="58" name="param" description="The content." type="mixed" variable="$content">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="58" name="return" description="$this" type="\Owl\Layout">
+            <type by_reference="false">\Owl\Layout</type>
+          </tag>
+        </docblock>
+        <argument line="66">
+          <name>$content</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Owl" line="91" package="">
+        <name>render</name>
+        <type>function</type>
+        <docblock line="85">
+          <description><![CDATA[Pass in the content partials to the rendering function.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="85" name="param" description="An array of partials" type="array" variable="$partials">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="85" name="return" description="The rendered template" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="91">
+          <name>$partials</name>
+          <default><![CDATA[array()]]></default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Owl" line="107" package="">
+        <name>__get</name>
+        <type>function</type>
+        <docblock line="101">
+          <description><![CDATA[Allowing access to content properties (if a \Owl\View instance)]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="101" name="param" description="The name of the property to get" type="string" variable="$name">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="101" name="return" description="" type="mixed">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="107">
+          <name>$name</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Owl" line="125" package="">
+        <name>__isset</name>
+        <type>function</type>
+        <docblock line="119">
+          <description><![CDATA[Checks to see if a variable is available in the content.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="119" name="param" description="The name of the property to check" type="string" variable="$name">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="119" name="return" description="" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+        </docblock>
+        <argument line="125">
+          <name>$name</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="Message.php" hash="92391e17aecf5dda1bbaee641cc71081" package="Default">
+    <parse_markers>
+      <critical line="14" code="50019">No short description for property $session</critical>
+      <error line="19" code="50016">The type hint of the argument is incorrect for the type definition of the @param tag with argument $session in setSession()</error>
+      <critical line="90" code="50019">No short description for property $message</critical>
+      <critical line="95" code="50019">No short description for property $type</critical>
+      <error line="1" code="50007">No page-level DocBlock was found in file Message.php</error>
+    </parse_markers>
+    <class final="false" abstract="false" namespace="Owl" line="12" package="Owl">
+      <name>Message</name>
+      <full_name>\Owl\Message</full_name>
+      <extends/>
+      <docblock line="5">
+        <description><![CDATA[The Message class lets you set "flash" messages from one part of your application
+so they can be viewed in another.]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="5" name="package" description="Owl"/>
+        <tag line="5" name="author" description="Dave Widmer &lt;dwidmer@bgsu.edu&gt;"/>
+      </docblock>
+      <property final="false" static="true" visibility="private" line="17" package="Default">
+        <name>$session</name>
+        <default><![CDATA[null]]></default>
+        <docblock line="14">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="14" name="var" description="The object to use to to save the session data." type="\Owl\Session">
+            <type by_reference="false">\Owl\Session</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="93" package="Default">
+        <name>$message</name>
+        <default><![CDATA[]]></default>
+        <docblock line="90">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="90" name="var" description="The message to display." type="mixed">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="98" package="Default">
+        <name>$type</name>
+        <default><![CDATA[]]></default>
+        <docblock line="95">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="95" name="var" description="The type of message." type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="Owl" line="24" package="">
+        <name>setSession</name>
+        <type>function</type>
+        <docblock line="19">
+          <description><![CDATA[Set the session class used within this class.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="19" name="param" description="" type="\Owl\Session" variable="$session">
+            <type by_reference="false">\Owl\Session</type>
+          </tag>
+        </docblock>
+        <argument line="24">
+          <name>$session</name>
+          <default><![CDATA[]]></default>
+          <type>Session</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="Owl" line="34" package="">
+        <name>get</name>
+        <type>function</type>
+        <docblock line="29">
+          <description><![CDATA[Gets the current message.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="29" name="return" description="The currently stored message or false" type="mixed">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="Owl" line="45" package="">
+        <name>set</name>
+        <type>function</type>
+        <docblock line="39">
+          <description><![CDATA[Sets a flash message.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="39" name="param" description="Type of message" type="string" variable="$type">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="39" name="param" description="Array/String for the message" type="mixed" variable="$message">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="45">
+          <name>$type</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="45">
+          <name>$message</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="Owl" line="55" package="">
+        <name>error</name>
+        <type>function</type>
+        <docblock line="50">
+          <description><![CDATA[Sets an error message.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="50" name="param" description="String/Array for the message(s)" type="mixed" variable="$message">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="55">
+          <name>$message</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="Owl" line="65" package="">
+        <name>notice</name>
+        <type>function</type>
+        <docblock line="60">
+          <description><![CDATA[Sets a notice.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="60" name="param" description="String/Array for the message(s)" type="mixed" variable="$message">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="65">
+          <name>$message</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="Owl" line="75" package="">
+        <name>success</name>
+        <type>function</type>
+        <docblock line="70">
+          <description><![CDATA[Sets a success message.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="70" name="param" description="String/Array for the message(s)" type="mixed" variable="$message">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="75">
+          <name>$message</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="Owl" line="85" package="">
+        <name>warn</name>
+        <type>function</type>
+        <docblock line="80">
+          <description><![CDATA[Sets a warning message.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="80" name="param" description="String/Array for the message(s)" type="mixed" variable="$message">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="85">
+          <name>$message</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Owl" line="106" package="">
+        <name>__construct</name>
+        <type>function</type>
+        <docblock line="100">
+          <description><![CDATA[Creates a new Message instance.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="100" name="param" description="Type of message" type="string" variable="$type">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="100" name="param" description="Message to display, either string or array" type="mixed" variable="$message">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="106">
+          <name>$type</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="106">
+          <name>$message</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="Session/Kohana.php" hash="86977fb3cecd2ce0b6e1b315e20fa7bd" package="Default">
+    <parse_markers>
+      <error line="1" code="50007">No page-level DocBlock was found in file Session/Kohana.php</error>
+    </parse_markers>
+    <class final="false" abstract="false" namespace="Owl\Session" line="11" package="Owl">
+      <name>Kohana</name>
+      <full_name>\Owl\Session\Kohana</full_name>
+      <extends/>
+      <extends>\Owl\Session</extends>
+      <docblock line="5">
+        <description><![CDATA[This class serves as an adapter to the Session claass in the Kohana framework.]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="5" name="package" description="Owl"/>
+        <tag line="5" name="author" description="Dave Widmer &lt;dwidmer@bgsu.edu&gt;"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Owl\Session" line="22" package="">
+        <name>getOnce</name>
+        <type>function</type>
+        <docblock line="13">
+          <description><![CDATA[Retrieve a session variable by the given name, if that session variable
+is not found, return the default value. Additionally, this function will
+clear out the session variable if found.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="13" name="param" description="The property name" type="string" variable="$name">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="13" name="param" description="The default value" type="mixed" variable="$default">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="13" name="return" description="The property or default value" type="mixed">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="22">
+          <name>$name</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="22">
+          <name>$default</name>
+          <default><![CDATA[false]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Owl\Session" line="33" package="">
+        <name>set</name>
+        <type>function</type>
+        <docblock line="27">
+          <description><![CDATA[Sets a session value.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="27" name="param" description="The property name" type="string" variable="$name">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="27" name="param" description="The property value" type="mixed" variable="$value">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="33">
+          <name>$name</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="33">
+          <name>$value</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="Session.php" hash="2f85e2cd229e20fc515ebf82eac7448a" package="Default">
+    <parse_markers>
+      <error line="1" code="50007">No page-level DocBlock was found in file Session.php</error>
+    </parse_markers>
+    <interface namespace="Owl" line="12" package="Owl">
+      <name>Session</name>
+      <full_name>\Owl\Session</full_name>
+      <extends/>
+      <docblock line="5">
+        <description><![CDATA[The Session interface is used to define a session driver that can be used
+to set and get session data for the Owl library.]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="5" name="package" description="Owl"/>
+        <tag line="5" name="author" description="Dave Widmer &lt;dwidmer@bgsu.edu&gt;"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Owl" line="23" package="">
+        <name>getOnce</name>
+        <type>function</type>
+        <docblock line="14">
+          <description><![CDATA[Retrieve a session variable by the given name, if that session variable
+is not found, return the default value. Additionally, this function will
+clear out the session variable if found.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="14" name="param" description="The property name" type="string" variable="$name">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="14" name="param" description="The default value" type="mixed" variable="$default">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="14" name="return" description="The property or default value" type="mixed">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="23">
+          <name>$name</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="23">
+          <name>$default</name>
+          <default><![CDATA[false]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Owl" line="31" package="">
+        <name>set</name>
+        <type>function</type>
+        <docblock line="25">
+          <description><![CDATA[Sets a session value.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="25" name="param" description="The property name" type="string" variable="$name">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="25" name="param" description="The property value" type="mixed" variable="$value">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="31">
+          <name>$name</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="31">
+          <name>$value</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+    </interface>
+  </file>
+  <file path="View.php" hash="ac313612720cfcc45781a5940aceedae" package="Default">
+    <parse_markers>
+      <critical line="13" code="50019">No short description for property $engine</critical>
+      <error line="28" code="50016">The type hint of the argument is incorrect for the type definition of the @param tag with argument $engine in setEngine()</error>
+      <critical line="39" code="50019">No short description for property $finder</critical>
+      <error line="54" code="50016">The type hint of the argument is incorrect for the type definition of the @param tag with argument $finder in setFinder()</error>
+      <critical line="76" code="50019">No short description for property $partials</critical>
+      <error line="143" code="50016">The type hint of the argument is incorrect for the type definition of the @param tag with argument $layout in addedToLayout()</error>
+      <error line="1" code="50007">No page-level DocBlock was found in file View.php</error>
+    </parse_markers>
+    <class final="false" abstract="true" namespace="Owl" line="11" package="Owl">
+      <name>View</name>
+      <full_name>\Owl\View</full_name>
+      <extends/>
+      <docblock line="5">
+        <description><![CDATA[The base View class.]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="5" name="package" description="Owl"/>
+        <tag line="5" name="author" description="Dave Widmer &lt;dwidmer@bgsu.edu&gt;"/>
+      </docblock>
+      <property final="false" static="true" visibility="private" line="16" package="Default">
+        <name>$engine</name>
+        <default><![CDATA[null]]></default>
+        <docblock line="13">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="13" name="var" description="The rendering engine used to compile the views." type="\Owl\Engine">
+            <type by_reference="false">\Owl\Engine</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="true" visibility="private" line="42" package="Default">
+        <name>$finder</name>
+        <default><![CDATA[null]]></default>
+        <docblock line="39">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="39" name="var" description="The class used to find template files" type="\Owl\Finder">
+            <type by_reference="false">\Owl\Finder</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="79" package="Default">
+        <name>$partials</name>
+        <default><![CDATA[array()]]></default>
+        <docblock line="76">
+          <description><![CDATA[]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="76" name="var" description="A list of partials in $name =&gt; template" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="Owl" line="23" package="">
+        <name>getEngine</name>
+        <type>function</type>
+        <docblock line="18">
+          <description><![CDATA[The template rendering engine.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="18" name="return" description="The template rendering engine." type="\Owl\Engine">
+            <type by_reference="false">\Owl\Engine</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="Owl" line="34" package="">
+        <name>setEngine</name>
+        <type>function</type>
+        <docblock line="28">
+          <description><![CDATA[Sets the template rendering engine. The engine is static across all
+View classes so you will only need to set it once.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="28" name="param" description="The rendering engine" type="\Owl\Engine" variable="$engine">
+            <type by_reference="false">\Owl\Engine</type>
+          </tag>
+        </docblock>
+        <argument line="34">
+          <name>$engine</name>
+          <default><![CDATA[]]></default>
+          <type>Engine</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="Owl" line="49" package="">
+        <name>getFinder</name>
+        <type>function</type>
+        <docblock line="44">
+          <description><![CDATA[Gets the finder.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="44" name="return" description="" type="\Owl\Finder">
+            <type by_reference="false">\Owl\Finder</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="Owl" line="59" package="">
+        <name>setFinder</name>
+        <type>function</type>
+        <docblock line="54">
+          <description><![CDATA[Set the file finder.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="54" name="param" description="The file finder class" type="\Owl\Finder" variable="$finder">
+            <type by_reference="false">\Owl\Finder</type>
+          </tag>
+        </docblock>
+        <argument line="59">
+          <name>$finder</name>
+          <default><![CDATA[]]></default>
+          <type>Finder</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Owl" line="68" package="">
+        <name>__construct</name>
+        <type>function</type>
+        <docblock line="64">
+          <description><![CDATA[Creates a new View instance, if the rendering engine isn't set, it will
+default to the Mustache engine.]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Owl" line="88" package="">
+        <name>set</name>
+        <type>function</type>
+        <docblock line="81">
+          <description><![CDATA[Sets parameters in a batch way.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="81" name="param" description="The property name OR an array of params" type="mixed" variable="$name">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="81" name="param" description="The value of the property if not an array" type="mixed" variable="$value">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="81" name="return" description="$this" type="\Owl\View">
+            <type by_reference="false">\Owl\View</type>
+          </tag>
+        </docblock>
+        <argument line="88">
+          <name>$name</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="88">
+          <name>$value</name>
+          <default><![CDATA[null]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Owl" line="108" package="">
+        <name>getPartials</name>
+        <type>function</type>
+        <docblock line="103">
+          <description><![CDATA[The partials for this view.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="103" name="return" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Owl" line="118" package="">
+        <name>getFile</name>
+        <type>function</type>
+        <docblock line="113">
+          <description><![CDATA[Gets the name of the template file (relative to the template path)]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="113" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Owl" line="133" package="">
+        <name>load</name>
+        <type>function</type>
+        <docblock line="127">
+          <description><![CDATA[Loads a template]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="127" name="param" description="The path of the template file (relative to the $templates_directory)" type="string" variable="$file">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="127" name="return" description="The full template" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="133">
+          <name>$file</name>
+          <default><![CDATA[null]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Owl" line="149" package="">
+        <name>addedToLayout</name>
+        <type>function</type>
+        <docblock line="143">
+          <description><![CDATA[Runs when the view is added to a layout. This will let you assign variables
+into the layout.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="143" name="param" description="The layout that this view was added to" type="\Owl\Layout" variable="$layout">
+            <type by_reference="false">\Owl\Layout</type>
+          </tag>
+        </docblock>
+        <argument line="149">
+          <name>$layout</name>
+          <default><![CDATA[]]></default>
+          <type>Layout</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Owl" line="161" package="">
+        <name>render</name>
+        <type>function</type>
+        <docblock line="154">
+          <description><![CDATA[Renders the view into html. All passed in partials should be the full
+template.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="154" name="param" description="An associative array of $name =&gt; $template" type="array" variable="$partials">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="154" name="return" description="The rendered HTML" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="161">
+          <name>$partials</name>
+          <default><![CDATA[array()]]></default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Owl" line="173" package="">
+        <name>__set</name>
+        <type>function</type>
+        <docblock line="167">
+          <description><![CDATA[Magic "set" method]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="167" name="param" description="The propery name" type="string" variable="$name">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="167" name="param" description="The value to set" type="mixed" variable="$value">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="173">
+          <name>$name</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="173">
+          <name>$value</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Owl" line="183" package="">
+        <name>__toString</name>
+        <type>function</type>
+        <docblock line="178">
+          <description><![CDATA[Renders the view to html.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="178" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <package name="" full_name=""/>
+  <package name="Default" full_name="Default"/>
+  <package name="Owl" full_name="Owl"/>
+  <namespace name="Owl" full_name="Owl">
+    <namespace name="Asset" full_name="Owl\Asset"/>
+    <namespace name="Engine" full_name="Owl\Engine"/>
+    <namespace name="Finder" full_name="Owl\Finder"/>
+    <namespace name="Form" full_name="Owl\Form"/>
+    <namespace name="Session" full_name="Owl\Session"/>
+  </namespace>
+  <marker>todo</marker>
+  <marker>fixme</marker>
+</project>

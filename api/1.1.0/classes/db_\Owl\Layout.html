@@ -1,0 +1,481 @@
+<!DOCTYPE html><html xmlns:date="http://exslt.org/dates-and-times" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Owl » \Owl\Layout</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Owl</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/db_Owl.html"><i class="icon-th"></i> Owl</a></li>
+<li><a>Packages</a></li>
+<li><a href="../packages/db_Owl.html"><i class="icon-folder-open"></i> Owl</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors</a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers (TODO/FIXME)</a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements</a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods</li>
+<li class="method public inherited"><a href="#__construct" title="__construct :: Creates a new View instance, if the rendering engine isn't set, it will
+default to the Mustache engine."><span class="description">Creates a new View instance, if the rendering engine isn't set, it will
+default to the Mustache engine.</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#__get" title="__get :: Allowing access to content properties (if a \Owl\View instance)"><span class="description">Allowing access to content properties (if a \Owl\View instance)</span><pre>__get()</pre></a></li>
+<li class="method public "><a href="#__isset" title="__isset :: Checks to see if a variable is available in the content."><span class="description">Checks to see if a variable is available in the content.</span><pre>__isset()</pre></a></li>
+<li class="method public inherited"><a href="#__set" title='__set :: Magic "set" method'><span class="description">Magic "set" method</span><pre>__set()</pre></a></li>
+<li class="method public inherited"><a href="#__toString" title="__toString :: Renders the view to html."><span class="description">Renders the view to html.</span><pre>__toString()</pre></a></li>
+<li class="method public inherited"><a href="#added_to_layout" title="added_to_layout :: Runs when the view is added to a layout. This will let you assign variables
+into the layout."><span class="description">Runs when the view is added to a layout. This will let you assign variables
+into the layout.</span><pre>added_to_layout()</pre></a></li>
+<li class="method public "><a href="#get_content" title="get_content :: The content that will replace {{&gt; content}} in the layout template."><span class="description">The content that will replace {{&gt; content}} in the layout template.</span><pre>get_content()</pre></a></li>
+<li class="method public inherited"><a href="#get_engine" title="get_engine :: The template rendering engine."><span class="description">The template rendering engine.</span><pre>get_engine()</pre></a></li>
+<li class="method public inherited"><a href="#get_file" title="get_file :: Gets the name of the template file (relative to the template path)"><span class="description">Gets the name of the template file (relative to the template path)</span><pre>get_file()</pre></a></li>
+<li class="method public inherited"><a href="#get_finder" title="get_finder :: Gets the finder."><span class="description">Gets the finder.</span><pre>get_finder()</pre></a></li>
+<li class="method public inherited"><a href="#get_partials" title="get_partials :: The partials for this view."><span class="description">The partials for this view.</span><pre>get_partials()</pre></a></li>
+<li class="method public inherited"><a href="#load" title="load :: Loads a template"><span class="description">Loads a template</span><pre>load()</pre></a></li>
+<li class="method public "><a href="#render" title="render :: Pass in the content partials to the rendering function."><span class="description">Pass in the content partials to the rendering function.</span><pre>render()</pre></a></li>
+<li class="method public inherited"><a href="#set" title="set :: Sets parameters in a batch way."><span class="description">Sets parameters in a batch way.</span><pre>set()</pre></a></li>
+<li class="method public "><a href="#set_content" title="set_content :: Sets the content that will replace {{&gt; content}} in the template. This
+can be anything that can be echo'ed out, but if it is an \Owl\View class
+then the added_to_layout function will be called."><span class="description">Sets the content that will replace {{&gt; content}} in the template. This
+can be anything that can be echo'ed out, but if it is an \Owl\View class
+then the added_to_layout function will be called.</span><pre>set_content()</pre></a></li>
+<li class="method public inherited"><a href="#set_engine" title="set_engine :: Sets the template rendering engine. The engine is static across all
+View classes so you will only need to set it once."><span class="description">Sets the template rendering engine. The engine is static across all
+View classes so you will only need to set it once.</span><pre>set_engine()</pre></a></li>
+<li class="method public inherited"><a href="#set_finder" title="set_finder :: Set the file finder."><span class="description">Set the file finder.</span><pre>set_finder()</pre></a></li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties</li>
+<li class="property public "><a href="#%24charset" title="$charset :: "><span class="description">The character set for the page</span><pre>$charset</pre></a></li>
+<li class="property public "><a href="#%24css" title="$css :: "><span class="description">An array of css files in a href =&gt; , media =&gt; format</span><pre>$css</pre></a></li>
+<li class="property public "><a href="#%24js" title="$js :: "><span class="description">An array of js files in a src =&gt; format</span><pre>$js</pre></a></li>
+<li class="property public "><a href="#%24meta" title="$meta :: "><span class="description">An array of metadata in a name =&gt; , content =&gt; format</span><pre>$meta</pre></a></li>
+<li class="property public "><a href="#%24title" title="$title :: "><span class="description">The page title.</span><pre>$title</pre></a></li>
+<li class="nav-header protected">» Protected</li>
+<li class="property protected inherited"><a href="#%24partials" title="$partials :: "><span class="description">A list of partials in $name =&gt; template</span><pre>$partials</pre></a></li>
+<li class="nav-header private">» Private</li>
+<li class="property private "><a href="#%24content" title="$content :: "><span class="description">The content to inject into the view.</span><pre>$content</pre></a></li>
+<li class="property private inherited"><a href="#%24engine" title="$engine :: "><span class="description">The rendering engine used to compile the views.</span><pre>$engine</pre></a></li>
+<li class="property private inherited"><a href="#%24finder" title="$finder :: "><span class="description">The class used to find template files</span><pre>$finder</pre></a></li>
+<li class="property private "><a href="#%24has_view" title="$has_view :: "><span class="description">Does this layout have an \Owl\View?</span><pre>$has_view</pre></a></li>
+</ul>
+</div>
+<div class="span8">
+<a name="%5COwl%5CLayout" id="\Owl\Layout"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/db_Owl.html">Owl</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/db_%5COwl%5CLayout.html">Layout</a>
+</li>
+</ul>
+<div href="../classes/db_%5COwl%5CLayout.html" class="element class">
+<p class="short_description">A Layout (template) View class.</p>
+<div class="details">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>package</th>
+<td><a href="..//packages/db_Owl.html">Owl</a></td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:dwidmer@bgsu.edu">Dave Widmer</a></td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a name="__construct" id="__construct"></a><div class="element clickable method public __construct" data-toggle="collapse" data-target=".__construct .collapse">
+<h2>Creates a new View instance, if the rendering engine isn't set, it will
+default to the Mustache engine.</h2>
+<pre>__construct() </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Owl\View::__construct()</td>
+</tr></table>
+</div></div>
+</div>
+<a name="__get" id="__get"></a><div class="element clickable method public __get" data-toggle="collapse" data-target=".__get .collapse">
+<h2>Allowing access to content properties (if a \Owl\View instance)</h2>
+<pre>__get(string $name) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>The name of the property to get</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>mixed</code></div>
+</div></div>
+</div>
+<a name="__isset" id="__isset"></a><div class="element clickable method public __isset" data-toggle="collapse" data-target=".__isset .collapse">
+<h2>Checks to see if a variable is available in the content.</h2>
+<pre>__isset(string $name) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>The name of the property to check</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a name="__set" id="__set"></a><div class="element clickable method public __set" data-toggle="collapse" data-target=".__set .collapse">
+<h2>Magic "set" method</h2>
+<pre>__set(string $name, mixed $value) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Owl\View::__set()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>The propery name</p></div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>mixed</code><p>The value to set</p></div>
+</div></div>
+</div>
+<a name="__toString" id="__toString"></a><div class="element clickable method public __toString" data-toggle="collapse" data-target=".__toString .collapse">
+<h2>Renders the view to html.</h2>
+<pre>__toString() : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Owl\View::__toString()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a name="added_to_layout" id="added_to_layout"></a><div class="element clickable method public added_to_layout" data-toggle="collapse" data-target=".added_to_layout .collapse">
+<h2>Runs when the view is added to a layout. This will let you assign variables
+into the layout.</h2>
+<pre>added_to_layout(Layout $layout) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Owl\View::added_to_layout()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$layout</h4>
+<code><a href="../classes/db_%5COwl%5CLayout.html">\Owl\Layout</a></code><p>The layout that this view was added to</p></div>
+</div></div>
+</div>
+<a name="get_content" id="get_content"></a><div class="element clickable method public get_content" data-toggle="collapse" data-target=".get_content .collapse">
+<h2>The content that will replace {{&gt; content}} in the layout template.</h2>
+<pre>get_content() : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response"><code>mixed</code></div>
+</div></div>
+</div>
+<a name="get_engine" id="get_engine"></a><div class="element clickable method public get_engine" data-toggle="collapse" data-target=".get_engine .collapse">
+<h2>The template rendering engine.</h2>
+<pre>get_engine() : <a href="../classes/db_%5COwl%5CEngine.html">\Owl\Engine</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Owl\View::get_engine()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/db_%5COwl%5CEngine.html">\Owl\Engine</a></code>The template rendering engine.</div>
+</div></div>
+</div>
+<a name="get_file" id="get_file"></a><div class="element clickable method public get_file" data-toggle="collapse" data-target=".get_file .collapse">
+<h2>Gets the name of the template file (relative to the template path)</h2>
+<pre>get_file() : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Owl\View::get_file()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a name="get_finder" id="get_finder"></a><div class="element clickable method public get_finder" data-toggle="collapse" data-target=".get_finder .collapse">
+<h2>Gets the finder.</h2>
+<pre>get_finder() : <a href="../classes/db_%5COwl%5CFinder.html">\Owl\Finder</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Owl\View::get_finder()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/db_%5COwl%5CFinder.html">\Owl\Finder</a></code></div>
+</div></div>
+</div>
+<a name="get_partials" id="get_partials"></a><div class="element clickable method public get_partials" data-toggle="collapse" data-target=".get_partials .collapse">
+<h2>The partials for this view.</h2>
+<pre>get_partials() : array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Owl\View::get_partials()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
+</div></div>
+</div>
+<a name="load" id="load"></a><div class="element clickable method public load" data-toggle="collapse" data-target=".load .collapse">
+<h2>Loads a template</h2>
+<pre>load(string $file) : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Owl\View::load()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$file</h4>
+<code>string</code><p>The path of the template file (relative to the $templates_directory)</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The full template</div>
+</div></div>
+</div>
+<a name="render" id="render"></a><div class="element clickable method public render" data-toggle="collapse" data-target=".render .collapse">
+<h2>Pass in the content partials to the rendering function.</h2>
+<pre>render(array $partials) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$partials</h4>
+<code>array</code><p>An array of partials</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The rendered template</div>
+</div></div>
+</div>
+<a name="set" id="set"></a><div class="element clickable method public set" data-toggle="collapse" data-target=".set .collapse">
+<h2>Sets parameters in a batch way.</h2>
+<pre>set(mixed $name, mixed $value) : <a href="../classes/db_%5COwl%5CView.html">\Owl\View</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Owl\View::set()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>mixed</code><p>The property name OR an array of params</p></div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>mixed</code><p>The value of the property if not an array</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/db_%5COwl%5CView.html">\Owl\View</a></code>$this</div>
+</div></div>
+</div>
+<a name="set_content" id="set_content"></a><div class="element clickable method public set_content" data-toggle="collapse" data-target=".set_content .collapse">
+<h2>Sets the content that will replace {{&gt; content}} in the template. This
+can be anything that can be echo'ed out, but if it is an \Owl\View class
+then the added_to_layout function will be called.</h2>
+<pre>set_content(mixed $content) : <a href="../classes/db_%5COwl%5CLayout.html">\Owl\Layout</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$content</h4>
+<code>mixed</code><p>The content.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/db_%5COwl%5CLayout.html">\Owl\Layout</a></code>$this</div>
+</div></div>
+</div>
+<a name="set_engine" id="set_engine"></a><div class="element clickable method public set_engine" data-toggle="collapse" data-target=".set_engine .collapse">
+<h2>Sets the template rendering engine. The engine is static across all
+View classes so you will only need to set it once.</h2>
+<pre>set_engine(Engine $engine) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Owl\View::set_engine()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$engine</h4>
+<code><a href="../classes/db_%5COwl%5CEngine.html">\Owl\Engine</a></code><p>The rendering engine</p></div>
+</div></div>
+</div>
+<a name="set_finder" id="set_finder"></a><div class="element clickable method public set_finder" data-toggle="collapse" data-target=".set_finder .collapse">
+<h2>Set the file finder.</h2>
+<pre>set_finder(Finder $finder) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Owl\View::set_finder()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$finder</h4>
+<code><a href="../classes/db_%5COwl%5CFinder.html">\Owl\Finder</a></code><p>The file finder class</p></div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a name="%24charset" id="$charset"> </a><div class="element clickable property public $charset" data-toggle="collapse" data-target=".$charset .collapse">
+<h2>The character set for the page</h2>
+<pre>$charset : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24css" id="$css"> </a><div class="element clickable property public $css" data-toggle="collapse" data-target=".$css .collapse">
+<h2>An array of css files in a href =&gt; , media =&gt; format</h2>
+<pre>$css : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24js" id="$js"> </a><div class="element clickable property public $js" data-toggle="collapse" data-target=".$js .collapse">
+<h2>An array of js files in a src =&gt; format</h2>
+<pre>$js : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24meta" id="$meta"> </a><div class="element clickable property public $meta" data-toggle="collapse" data-target=".$meta .collapse">
+<h2>An array of metadata in a name =&gt; , content =&gt; format</h2>
+<pre>$meta : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24title" id="$title"> </a><div class="element clickable property public $title" data-toggle="collapse" data-target=".$title .collapse">
+<h2>The page title.</h2>
+<pre>$title : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24partials" id="$partials"> </a><div class="element clickable property protected $partials" data-toggle="collapse" data-target=".$partials .collapse">
+<h2>A list of partials in $name =&gt; template</h2>
+<pre>$partials : array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Owl\View::$$partials</td>
+</tr></table>
+</div></div>
+</div>
+<a name="%24content" id="$content"> </a><div class="element clickable property private $content" data-toggle="collapse" data-target=".$content .collapse">
+<h2>The content to inject into the view.</h2>
+<pre>$content : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24engine" id="$engine"> </a><div class="element clickable property private $engine" data-toggle="collapse" data-target=".$engine .collapse">
+<h2>The rendering engine used to compile the views.</h2>
+<pre>$engine : <a href="../classes/db_%5COwl%5CEngine.html">\Owl\Engine</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Owl\View::$$engine</td>
+</tr></table>
+</div></div>
+</div>
+<a name="%24finder" id="$finder"> </a><div class="element clickable property private $finder" data-toggle="collapse" data-target=".$finder .collapse">
+<h2>The class used to find template files</h2>
+<pre>$finder : <a href="../classes/db_%5COwl%5CFinder.html">\Owl\Finder</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\Owl\View::$$finder</td>
+</tr></table>
+</div></div>
+</div>
+<a name="%24has_view" id="$has_view"> </a><div class="element clickable property private $has_view" data-toggle="collapse" data-target=".$has_view .collapse">
+<h2>Does this layout have an \Owl\View?</h2>
+<pre>$has_view : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a1</a> and<br>
+            generated on 2013-03-11T10:24:39-04:00.<br></footer></div>
+</div>
+</body>
+</html>

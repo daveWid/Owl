@@ -242,6 +242,8 @@ footer .pad { padding-bottom: 0; }
 
 .pad { padding: 1em; }
 
+.unpad { padding: 0; }
+
 .top-line { border-top: 1px solid lightgrey; }
 
 .headline { margin: 0; }

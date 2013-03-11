@@ -23,18 +23,14 @@ header {
 	@include border-box;
 	padding: 1em;
 
-	h1 {
-		font-size: 2em;
-
-		a {
-			text-decoration: none;
-		}
+	a {
+		text-decoration: none;
 	}
 }
 
 nav {
 	.navigation {
-		@include translate(0, 0.825em, 0);
+		@include translate(0, 1.45em, 0);
 	}
 }
 
@@ -114,4 +110,8 @@ footer {
 	padding: 1em;
 	background-color: $colorLightBlue;
 	font-family: 'Droid Mono', Consolas, monospace;
+}
+
+.air-out > li {
+	margin: 0.5em 0;
 }

@@ -709,3 +709,8 @@ footer {
 
 .large {
   font-size: 2em; }
+
+.code {
+  padding: 1em;
+  background-color: #e5f5ff;
+  font-family: "Droid Mono", Consolas, monospace; }
